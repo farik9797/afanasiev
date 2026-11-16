@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="60.4902" height="61.5331" viewBox="0 0 60.4902 61.5331" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="play">
+<ellipse id="Ellipse 5" cx="30.2451" cy="30.7666" rx="30.2451" ry="30.7666" fill="#FEFEFE" fill-opacity="0.87"/>
+<ellipse id="Ellipse 1" cx="30.2451" cy="30.7666" rx="20.9988" ry="21.3609" fill="url(#paint0_linear_0_624)"/>
+<path id="Polygon 1" d="M38.652 29.1193C39.8985 29.8514 39.8985 31.6817 38.652 32.4138L27.5343 38.9433C26.2877 39.6754 24.7295 38.7603 24.7295 37.296L24.7295 24.237C24.7295 22.7728 26.2877 21.8577 27.5343 22.5898L38.652 29.1193Z" fill="white"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_624" x1="29.4317" y1="62.2147" x2="29.4317" y2="9.40567" gradientUnits="userSpaceOnUse">
+<stop stop-color="#086038"/>
+<stop offset="1" stop-color="#6AAA3F"/>
+</linearGradient>
+</defs>
+</svg>

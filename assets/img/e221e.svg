@@ -1,0 +1,22 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="advantages__icon">
+<g clip-path="url(#clip0_0_68)">
+<rect width="54" height="54" rx="27" fill="white"/>
+<circle id="Ellipse 6" cx="8.85081" cy="27" r="29.3457" fill="#E8FBF2"/>
+<g id="boxicons:calendar-check">
+<path id="Vector" d="M36.2621 16.4147H33.6158V13.7684H30.9695V16.4147H23.0305V13.7684H20.3842V16.4147H17.7379C16.2824 16.4147 15.0916 17.6056 15.0916 19.061V37.5853C15.0916 39.0408 16.2824 40.2316 17.7379 40.2316H36.2621C37.7176 40.2316 38.9084 39.0408 38.9084 37.5853V19.061C38.9084 17.6056 37.7176 16.4147 36.2621 16.4147ZM17.7379 37.5853V21.7074H36.2621V19.061V37.5853H17.7379Z" fill="#023534"/>
+<path id="Vector_2" d="M25.6768 30.427L22.6468 27.3837L20.7679 29.2626L25.6768 34.1583L33.2321 26.6163L31.3532 24.7374L25.6768 30.427Z" fill="#023534"/>
+</g>
+</g>
+<rect x="0.5" y="0.5" width="53" height="53" rx="26.5" stroke="url(#paint0_linear_0_68)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_68" x1="43.6616" y1="58.1774" x2="25.9541" y2="-2.22866e-06" gradientUnits="userSpaceOnUse">
+<stop offset="0.10815" stop-color="#76B599"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="clip0_0_68">
+<rect width="54" height="54" rx="27" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="80.002" height="80.002" viewBox="0 0 80.002 80.002" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="changes__icon">
+<g clip-path="url(#clip0_0_75)">
+<circle id="Ellipse 8" cx="40.001" cy="40.001" r="40.001" fill="#E7F5E1"/>
+<circle id="Ellipse 9" cx="40.001" cy="40.001" r="29.2002" fill="#C5F3B2"/>
+<g id="hugeicons:energy">
+<path id="Vector" d="M30.5473 39.0191L40.3136 25.8547C41.0789 24.8256 42.5085 25.4655 42.5085 26.8365V37.0262C42.5085 37.8484 43.0702 38.5128 43.7622 38.5128H48.5135C49.593 38.5128 50.1678 40.0221 49.4546 40.9844L39.6884 54.1473C38.9231 55.1763 37.4935 54.5364 37.4935 53.1654V42.9758C37.4935 42.1535 36.9317 41.4892 36.2397 41.4892H31.4868C30.4073 41.4892 29.8342 39.9798 30.5473 39.0191Z" stroke-width="2.44238" stroke-linecap="round" stroke-linejoin="round" stroke="#023534"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_75">
+<rect width="80.002" height="80.002" rx="40.001" fill="white"/>
+</clipPath>
+</defs>
+</svg>

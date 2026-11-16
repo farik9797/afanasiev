@@ -1,0 +1,27 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="71.2987" height="71.2987" viewBox="0 0 71.2987 71.2987" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="quiz-icons" filter="url(#filter0_d_0_590)">
+<g clip-path="url(#clip0_0_590)">
+<rect x="8.4" y="4.4" width="54.4987" height="54.4987" rx="27.2493" fill="white"/>
+<circle id="Ellipse 6" cx="18.2955" cy="14.2955" r="33.6631" fill="#E8FBF2"/>
+<g id="bx:time">
+<path id="Vector" d="M35.6493 18.0589C28.1555 18.0589 22.0589 24.1555 22.0589 31.6493C22.0589 39.1431 28.1555 45.2398 35.6493 45.2398C43.1431 45.2398 49.2398 39.1431 49.2398 31.6493C49.2398 24.1555 43.1431 18.0589 35.6493 18.0589ZM35.6493 42.5217C29.6546 42.5217 24.777 37.6441 24.777 31.6493C24.777 25.6546 29.6546 20.777 35.6493 20.777C41.6441 20.777 46.5217 25.6546 46.5217 31.6493C46.5217 37.6441 41.6441 42.5217 35.6493 42.5217Z" fill="#023534"/>
+<path id="Vector_2" d="M37.0084 24.8541H34.2903V33.0084H42.4446V30.2903H37.0084V24.8541Z" fill="#023534"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_590" x="0" y="0" width="71.2987" height="71.2987" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="4.2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.34755 0 0 0 0 0.545933 0 0 0 0 0.514191 0 0 0 0.17 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_590"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_590" result="shape"/>
+</filter>
+<clipPath id="clip0_0_590">
+<rect x="8.4" y="4.4" width="54.4987" height="54.4987" rx="27.2493" fill="white"/>
+</clipPath>
+</defs>
+</svg>

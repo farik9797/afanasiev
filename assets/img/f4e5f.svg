@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="43.0195" height="43.7612" viewBox="0 0 43.0195 43.7612" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="play">
+<mask id="stroke0_0_37" fill="white">
+<path d="M43.0195 21.8806C43.0195 33.965 33.3893 43.7612 21.5098 43.7612C9.63025 43.7612 0 33.965 0 21.8806C0 9.79629 9.63025 0 21.5098 0C33.3893 0 43.0195 9.79629 43.0195 21.8806Z"/>
+</mask>
+<ellipse id="Ellipse 5" cx="21.5098" cy="21.8806" rx="21.5098" ry="21.8806" stroke-width="4" stroke="url(#paint0_linear_0_37)" mask="url(#stroke0_0_37)"/>
+<g id="Ellipse 1">
+</g>
+<path id="Polygon 1" d="M27.4886 20.7091C28.3751 21.2298 28.3751 22.5314 27.4886 23.0521L19.5819 27.6958C18.6953 28.2164 17.5872 27.5656 17.5872 26.5243L17.5872 17.237C17.5872 16.1956 18.6953 15.5448 19.5819 16.0655L27.4886 20.7091Z" fill="#023534"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_37" x1="34.7834" y1="47.1466" x2="20.2288" y2="0.138619" gradientUnits="userSpaceOnUse">
+<stop offset="0.10815" stop-color="#76B599"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>
