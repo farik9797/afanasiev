@@ -28,6 +28,8 @@
     dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); auto(); }); });
     hero.addEventListener('mouseenter', function () { clearInterval(timer); });
     hero.addEventListener('mouseleave', auto);
+    hero.addEventListener('focusin', function () { clearInterval(timer); });
+    hero.addEventListener('focusout', auto);
     var x0 = null;
     track.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
     track.addEventListener('touchend', function (e) {
@@ -86,7 +88,17 @@
     if (v) { e.preventDefault(); openVideo(v.getAttribute('data-video')); return; }
     if (e.target.closest('[data-close]')) { e.preventDefault(); closeModal(); }
   });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closeModal(); return; }
+    if (e.key !== 'Tab') return;
+    var m = $('.modal:not([hidden])');
+    if (!m) return;
+    var f = $$('button:not([disabled]), input:not([type=hidden]):not([hidden]):not(.hp), a[href]', $('.pop', m));
+    if (!f.length) return;
+    var a = f[0], z = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
+    else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); }
+  });
 
   /* ---------- видео ---------- */
   var openVideo = function (key) {
@@ -149,6 +161,8 @@
         field.type = PH[ch].type;
         field.inputMode = PH[ch].mode;
         field.placeholder = PH[ch].ph;
+        field.autocomplete = ch === 'email' ? 'email' : (ch === 'whatsapp' ? 'tel' : 'off');
+        field.spellcheck = false;
         field.classList.remove('is-error');
         field.focus();
         refresh();
