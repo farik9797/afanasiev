@@ -70,7 +70,15 @@ h1,h2,h3,.h-hero{text-wrap:balance}
 
 /* HERO SLIDER */
 .hero{position:relative;height:587px;overflow:hidden;--gut:max(0px,calc((100vw - 1512px) / 2))}
-.hero__track{display:flex;height:516px;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.hero__track{display:flex;height:516px;transition:transform .9s cubic-bezier(.65,0,.35,1)}
+/* текст нового слайда проявляется снизу, по очереди */
+.slide__content>*{transition:opacity .6s ease,transform .6s ease}
+.slide[aria-hidden=true] .slide__content>*{opacity:0;transform:translateY(14px)}
+.slide[aria-hidden=false] .slide__content>*{transition-delay:.45s}
+.slide[aria-hidden=false] .slide__content>*:nth-child(2){transition-delay:.52s}
+.slide[aria-hidden=false] .slide__content>*:nth-child(3){transition-delay:.59s}
+.slide[aria-hidden=false] .slide__content>*:nth-child(4){transition-delay:.66s}
+.slide[aria-hidden=false] .slide__content>*:nth-child(n+5){transition-delay:.73s}
 .slide{flex:0 0 100%;position:relative;height:516px;overflow:hidden}
 .slide--1{background:#f2f9f3}
 .slide--2{background:#fbfaf6}
@@ -124,10 +132,10 @@ h1,h2,h3,.h-hero{text-wrap:balance}
 .hero__dots{position:absolute;left:50%;top:547px;transform:translateX(-50%);display:flex;gap:3px}
 .hero__dots button{position:relative;overflow:hidden;width:33px;height:8px;border-radius:900px;background:#c9ecc5}
 /* активная точка заполняется за время показа слайда, по окончании — следующий слайд */
-.hero__dots button::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--main);transform:scaleX(0);transform-origin:left center}
-.hero__dots button.is-active::after{animation:dotFill 7s linear forwards}
+.hero__dots button::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--main);transform:scaleX(1);transform-origin:left center;opacity:0;transition:opacity .7s ease}
+.hero__dots button.is-active::after{opacity:1;transition:none;animation:dotFill 7s linear forwards}
 .hero.is-paused .hero__dots button.is-active::after{animation-play-state:paused}
-@keyframes dotFill{to{transform:scaleX(1)}}
+@keyframes dotFill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 
 /* MAIN */
 .main-sec{overflow:hidden}
@@ -429,8 +437,10 @@ body.is-locked{overflow:hidden}
   .slide__content .feats{order:4;flex-direction:column;align-items:flex-start;gap:16px;margin-top:40px}
   .slide__content .feats li br{display:none}
   .slide__content .feats li{width:auto!important;max-width:300px}
-  .slide--2 .slide__content,.slide--3 .slide__content{width:58%}
-  .slide2__bg,.slide3__bg{right:-200px;width:760px;height:100%}
+  .slide2__bg,.slide3__bg{right:0;width:48%;height:100%}
+  .slide2__bg img{object-position:58% center}
+  .slide3__bg img{object-position:72% center}
+  .slide--2 .slide__content,.slide--3 .slide__content{width:52%}
   .play--big{left:calc(50% - 40px)}
   /* слайд 1 на планшете: фото слева, текст справа, преимущества и «уже прошли» строкой ниже */
   .slide--1{display:grid;grid-template-columns:45% 1fr;column-gap:24px;align-content:start;padding-bottom:30px}
