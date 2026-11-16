@@ -42,6 +42,14 @@
     go(0); auto();
   }
 
+  /* ---------- плавающая кнопка квиза: появляется после первого экрана ---------- */
+  var fab = $('.quiz-fab');
+  if (fab) {
+    var onScroll = function () { fab.classList.toggle('is-shown', window.scrollY > 500); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
   /* ---------- бургер ---------- */
   var header = $('.header');
   var burger = $('.burger');
