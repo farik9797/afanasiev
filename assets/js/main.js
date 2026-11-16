@@ -11,24 +11,25 @@
     var track = $('.hero__track', hero);
     var slides = $$('.slide', hero);
     var dots = $$('.hero__dots button', hero);
-    var cur = 0, timer = null;
+    var cur = 0;
+    // смену слайда задаёт анимация заполнения активной точки (7 с, см. dotFill в CSS)
     var go = function (i) {
       cur = (i + slides.length) % slides.length;
       track.style.transform = 'translateX(' + (-100 * cur) + '%)';
-      dots.forEach(function (d, k) { d.classList.toggle('is-active', k === cur); });
+      dots.forEach(function (d) { d.classList.remove('is-active'); });
+      void dots[cur].offsetWidth; // перезапуск анимации, если точка та же
+      dots[cur].classList.add('is-active');
       slides.forEach(function (s, k) { s.setAttribute('aria-hidden', k === cur ? 'false' : 'true'); });
     };
-    var auto = function () {
-      clearInterval(timer);
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      timer = setInterval(function () { go(cur + 1); }, 7000);
-    };
-    $('.hero__arrow--prev', hero).addEventListener('click', function () { go(cur - 1); auto(); });
-    $('.hero__arrow--next', hero).addEventListener('click', function () { go(cur + 1); auto(); });
-    dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); auto(); }); });
-    hero.addEventListener('mouseenter', function () { clearInterval(timer); });
+    var auto = function () { hero.classList.remove('is-paused'); };
+    var pause = function () { hero.classList.add('is-paused'); };
+    $('.hero__dots', hero).addEventListener('animationend', function () { go(cur + 1); });
+    $('.hero__arrow--prev', hero).addEventListener('click', function () { go(cur - 1); });
+    $('.hero__arrow--next', hero).addEventListener('click', function () { go(cur + 1); });
+    dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); }); });
+    hero.addEventListener('mouseenter', pause);
     hero.addEventListener('mouseleave', auto);
-    hero.addEventListener('focusin', function () { clearInterval(timer); });
+    hero.addEventListener('focusin', pause);
     hero.addEventListener('focusout', auto);
     var x0 = null;
     track.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });

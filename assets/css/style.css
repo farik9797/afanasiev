@@ -122,8 +122,12 @@ h1,h2,h3,.h-hero{text-wrap:balance}
 .hero__arrow--next{right:calc(var(--gut) + 7px)}
 .hero__arrow--next img{transform:scaleX(-1)}
 .hero__dots{position:absolute;left:50%;top:547px;transform:translateX(-50%);display:flex;gap:3px}
-.hero__dots button{width:33px;height:8px;border-radius:900px;background:#c9ecc5;transition:background .25s}
-.hero__dots button.is-active{background:var(--main)}
+.hero__dots button{position:relative;overflow:hidden;width:33px;height:8px;border-radius:900px;background:#c9ecc5}
+/* активная точка заполняется за время показа слайда, по окончании — следующий слайд */
+.hero__dots button::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--main);transform:scaleX(0);transform-origin:left center}
+.hero__dots button.is-active::after{animation:dotFill 7s linear forwards}
+.hero.is-paused .hero__dots button.is-active::after{animation-play-state:paused}
+@keyframes dotFill{to{transform:scaleX(1)}}
 
 /* MAIN */
 .main-sec{overflow:hidden}
@@ -550,3 +554,4 @@ html,body{overflow-x:clip}
   .slide1__bg img{left:calc(var(--gut) - 161px);width:1349px;-webkit-mask-image:linear-gradient(to right,transparent,#000 160px);mask-image:linear-gradient(to right,transparent,#000 160px)}
   .slide1__bg::after{background:linear-gradient(-85.87deg,#e6eee6 calc(var(--gut) + 740px),rgba(242,249,243,0) calc(var(--gut) + 918px))}
 }
+@media (prefers-reduced-motion:reduce){.hero__dots button.is-active::after{transform:scaleX(1)}}
