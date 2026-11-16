@@ -20,12 +20,16 @@
       void dots[cur].offsetWidth; // перезапуск анимации, если точка та же
       dots[cur].classList.add('is-active');
       slides.forEach(function (s, k) { s.setAttribute('aria-hidden', k === cur ? 'false' : 'true'); });
+      // как в прототипе: на первом слайде бледная «назад», на последнем — «вперёд»
+      prev.classList.toggle('is-off', cur === 0);
+      next.classList.toggle('is-off', cur === slides.length - 1);
     };
+    var prev = $('.hero__arrow--prev', hero), next = $('.hero__arrow--next', hero);
     var auto = function () { hero.classList.remove('is-paused'); };
     var pause = function () { hero.classList.add('is-paused'); };
     $('.hero__dots', hero).addEventListener('animationend', function () { go(cur + 1); });
-    $('.hero__arrow--prev', hero).addEventListener('click', function () { go(cur - 1); });
-    $('.hero__arrow--next', hero).addEventListener('click', function () { go(cur + 1); });
+    prev.addEventListener('click', function () { if (cur > 0) go(cur - 1); });
+    next.addEventListener('click', function () { if (cur < slides.length - 1) go(cur + 1); });
     dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); }); });
     hero.addEventListener('mouseenter', pause);
     hero.addEventListener('mouseleave', auto);
@@ -42,12 +46,27 @@
     go(0); auto();
   }
 
+  /* ---------- слайд 3: на узких экранах картинка с надписями масштабируется целиком ---------- */
+  var art = $('.art3');
+  if (art) {
+    var fitArt = function () {
+      if (window.innerWidth > 1100) { art.style.removeProperty('--s'); art.style.removeProperty('--tx'); return; }
+      var box = art.parentNode, w = box.clientWidth;
+      var s = Math.max(box.clientHeight / 516, w / 958);
+      // в кадре держим точку между Евгением и книгой (x≈470 на макете 958×516)
+      var tx = Math.min(0, Math.max(w - 958 * s, w / 2 - 470 * s));
+      art.style.setProperty('--s', s.toFixed(4));
+      art.style.setProperty('--tx', tx.toFixed(1) + 'px');
+    };
+    window.addEventListener('resize', fitArt);
+    window.addEventListener('load', fitArt);
+    fitArt();
+  }
+
   /* ---------- плавающая кнопка квиза: появляется после первого экрана ---------- */
   var fab = $('.quiz-fab');
   if (fab) {
-    var onScroll = function () { fab.classList.toggle('is-shown', window.scrollY > 500); };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    fab.classList.add('is-shown'); // в прототипе кнопка видна сразу
   }
 
   /* ---------- бургер ---------- */

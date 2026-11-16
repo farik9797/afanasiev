@@ -122,7 +122,22 @@ h1,h2,h3,.h-hero{text-wrap:balance}
 .play img{width:100%;height:100%}
 .play--big{left:calc(50% - 54.7px - 75px);width:60.5px;height:61.5px}
 .slide3__bg{position:absolute;right:-71.8px;top:0;width:958.3px;height:516px}
-.slide3__bg img{width:100%;height:100%;object-fit:cover}
+.art3{position:absolute;right:0;top:0;width:958.3px;height:516px;transform-origin:top right;transform:scale(var(--s,1))}
+.art3__img{position:absolute;left:-.9px;top:-.97px;width:960px;height:517px;max-width:none;object-fit:cover}
+/* надписи на книге и цитата — из макета (slide3-image), поверх фото */
+.art3>span,.art3__heart{position:absolute;transform-origin:top left;color:var(--main);white-space:nowrap}
+.art3__logo{display:flex;align-items:center;gap:10px;width:376px;left:436.7px;top:199.6px}
+.art3__logo--1{transform:rotate(1.62deg) scale(.2779)}
+.art3__logo--2{left:674px;top:202.5px;transform:rotate(10.33deg) scale(.1542)}
+.art3__logo .logo__mark{position:relative;width:48px;height:36px;flex-shrink:0;mix-blend-mode:multiply}
+.art3__title{left:437px;top:228px;width:154px;white-space:normal;font:600 21.66px/.99 var(--serif);letter-spacing:-.01em;transform:rotate(1.69deg)}
+.art3__tags{left:437px;top:313px;display:flex;gap:10.6px;font:600 7.03px/.99 var(--serif);transform:rotate(1.71deg)}
+.art3__tags i{font-style:normal}
+.art3__tags i+i{padding-left:10.6px;border-left:.4px solid var(--main)}
+.art3__rec{left:672px;top:226px;font:600 14.47px/.99 var(--serif);transform:rotate(10.76deg)}
+.art3__quote{left:648px;top:40px;font:400 22.6px/1.208 var(--hand);letter-spacing:.02em;transform:rotate(-7.95deg)}
+.art3__sign{left:753px;top:126px;font:400 15.34px/1.208 var(--hand);transform:rotate(-7.95deg)}
+.art3__heart{left:788.4px;top:146.4px;width:35.3px;height:34.6px}
 .slide3__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(to left,rgba(251,250,245,0) 92.6%,#fbfaf5)}
 .hero__arrow{position:absolute;top:230px;width:49.3px;height:49.3px;z-index:5;transition:transform .2s}
 .hero__arrow:hover{transform:scale(1.08)}
@@ -439,7 +454,6 @@ body.is-locked{overflow:hidden}
   .slide__content .feats li{width:auto!important;max-width:300px}
   .slide2__bg,.slide3__bg{right:0;width:48%;height:100%}
   .slide2__bg img{object-position:58% center}
-  .slide3__bg img{object-position:72% center}
   .slide--2 .slide__content,.slide--3 .slide__content{width:52%}
   .play--big{left:calc(50% - 40px)}
   /* слайд 1 на планшете: фото слева, текст справа, преимущества и «уже прошли» строкой ниже */
@@ -572,3 +586,11 @@ html,body{overflow-x:clip}
 .quiz-fab img{width:24px;height:24px}
 body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 @media (max-width:760px){.quiz-fab{left:16px;bottom:16px;height:46px;font-size:15px}}
+
+/* слайд 3 на планшете и телефоне: картинку с надписями масштабируем целиком (JS задаёт --s) */
+@media (max-width:1100px){.slide3__bg{overflow:hidden}}
+.hero__arrow.is-off{opacity:.4;cursor:default;pointer-events:none}
+.art3>.art3__title{white-space:normal}
+.art3>.art3__quote{left:640px;top:30px}
+.art3>.art3__sign{left:748px;top:118px}
+@media (max-width:1100px){.art3{left:0;right:auto;transform-origin:top left;transform:translateX(var(--tx,0)) scale(var(--s,1))}}
