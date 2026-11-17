@@ -143,12 +143,7 @@
     openModal('video');
   };
 
-  /* ---------- формы с выбором канала ---------- */
-  var PH = {
-    email: { ph: 'name@mail.ru', type: 'email', mode: 'email' },
-    telegram: { ph: '@username или номер телефона', type: 'text', mode: 'text' },
-    whatsapp: { ph: '+7 900 000-00-00', type: 'tel', mode: 'tel' }
-  };
+  /* ---------- формы: email / Telegram / WhatsApp — заполняется любое из полей ---------- */
   var valid = function (ch, v) {
     v = (v || '').trim();
     if (!v) return false;
@@ -171,44 +166,43 @@
   };
 
   var initForm = function (form, extra) {
-    var chans = $$('.channel', form);
-    var field = $('input[name=contact]', form);
-    var chIn = $('input[name=channel]', form);
+    var fields = $$('.contact input', form);
     var agree = $('input[name=agree]', form);
     var btn = $('button[type=submit]', form);
-    var refresh = function () {
-      btn.disabled = !(chIn.value && valid(chIn.value, field.value) && agree.checked);
-    };
-    chans.forEach(function (c) {
-      c.addEventListener('click', function () {
-        chans.forEach(function (x) { x.setAttribute('aria-checked', 'false'); });
-        c.setAttribute('aria-checked', 'true');
-        var ch = c.getAttribute('data-channel');
-        chIn.value = ch;
-        field.hidden = false;
-        field.type = PH[ch].type;
-        field.inputMode = PH[ch].mode;
-        field.placeholder = PH[ch].ph;
-        field.autocomplete = ch === 'email' ? 'email' : (ch === 'whatsapp' ? 'tel' : 'off');
-        field.spellcheck = false;
-        field.classList.remove('is-error');
-        field.focus();
-        refresh();
-      });
+    var msg = $('.form-msg', form);
+    // как в прототипе: кнопка становится активной после согласия, контакт проверяем при отправке
+    var refresh = function () { btn.disabled = !agree.checked; };
+    var say = function (t) { msg.textContent = t; msg.hidden = !t; };
+    fields.forEach(function (f) {
+      f.addEventListener('input', function () { f.parentNode.classList.remove('is-error'); say(''); });
+      f.addEventListener('blur', function () { if (f.value.trim() && !valid(f.name, f.value)) f.parentNode.classList.add('is-error'); });
     });
-    field.addEventListener('input', function () { field.classList.remove('is-error'); refresh(); });
-    field.addEventListener('blur', function () { if (field.value && !valid(chIn.value, field.value)) field.classList.add('is-error'); });
     agree.addEventListener('change', refresh);
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (btn.disabled || $('input[name=website]', form).value) return;
+      var filled = fields.filter(function (f) { return f.value.trim(); });
+      var bad = filled.filter(function (f) { return !valid(f.name, f.value); });
+      if (!filled.length) {
+        fields.forEach(function (f) { f.parentNode.classList.add('is-error'); });
+        say('Укажите email, Telegram или WhatsApp — куда прислать ответ');
+        fields[0].focus();
+        return;
+      }
+      if (bad.length) {
+        bad.forEach(function (f) { f.parentNode.classList.add('is-error'); });
+        say(bad[0].name === 'email' ? 'Проверьте email: например, name@mail.ru' : bad[0].name === 'whatsapp' ? 'Проверьте номер WhatsApp: например, +7 900 000-00-00' : 'Проверьте Telegram: @username или номер телефона');
+        bad[0].focus();
+        return;
+      }
       btn.disabled = true;
-      var payload = { form: form.getAttribute('data-form'), channel: chIn.value, contact: field.value.trim(), page: location.href };
+      var contacts = {};
+      filled.forEach(function (f) { contacts[f.name] = f.value.trim(); });
+      var payload = { form: form.getAttribute('data-form'), contacts: contacts, page: location.href };
       if (extra) payload.answers = extra();
       sendLead(payload).then(function (r) {
         if (r.ok) {
-          form.reset(); field.hidden = true; chIn.value = '';
-          chans.forEach(function (x) { x.setAttribute('aria-checked', 'false'); });
+          form.reset(); say('');
           openModal('thanks');
           if (window.ym && CFG.ymId) window.ym(CFG.ymId, 'reachGoal', 'lead_' + payload.form);
         } else {
@@ -268,17 +262,16 @@
           '<h2 class="quiz__title">Спасибо, что прошли тест!</h2>' +
           '<p class="quiz__hint" style="margin-bottom:20px">На основе ваших ответов я сформирую персональные рекомендации и отправлю их на вашу электронную почту или в мессенджер</p>' +
           '<form class="lead-form lead-form--pop" data-form="quiz" novalidate>' +
-          '<div class="channels channels--pop" role="radiogroup" aria-label="Куда прислать рекомендации">' +
-          '<button type="button" class="channel" data-channel="email" role="radio" aria-checked="false"><img src="' + I + '75ec4.svg" alt="" width="23" height="23">Ваш email</button>' +
-          '<button type="button" class="channel" data-channel="telegram" role="radio" aria-checked="false"><img src="' + I + 'fac9e.svg" alt="" width="23" height="23">Telegram</button>' +
-          '<button type="button" class="channel" data-channel="whatsapp" role="radio" aria-checked="false"><img src="' + I + 'd197a.svg" alt="" width="23" height="23">WhatsApp</button></div>' +
-          '<input class="field" type="text" name="contact" hidden autocomplete="off" aria-label="Контакт"><input type="hidden" name="channel">' +
+          '<div class="contacts contacts--col" role="group" aria-label="Куда прислать рекомендации">' +
+          '<label class="contact"><img src="' + I + '75ec4.svg" alt="" aria-hidden="true" width="23" height="23"><input type="email" name="email" placeholder="Ваш email" autocomplete="email" inputmode="email" spellcheck="false" aria-label="Email"></label>' +
+          '<label class="contact"><img src="' + I + 'fac9e.svg" alt="" aria-hidden="true" width="23" height="23"><input type="text" name="telegram" placeholder="Telegram" autocomplete="off" spellcheck="false" aria-label="Telegram: @username или телефон"></label>' +
+          '<label class="contact"><img src="' + I + 'd197a.svg" alt="" aria-hidden="true" width="23" height="23"><input type="tel" name="whatsapp" placeholder="WhatsApp" autocomplete="tel" inputmode="tel" aria-label="WhatsApp: номер телефона"></label></div>' +
+          '<p class="form-msg" aria-live="polite" hidden></p>' +
           '<input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">' +
           '<p class="safe"><img src="' + I + '0a472.svg" alt="" width="21" height="21">Ваши данные в безопасности, мы не передаём их третьим лицам</p>' +
           '<div class="form-send form-send--pop"><button type="submit" class="btn btn--submit btn--submit-lg" style="font-size:16px" disabled>Получить персональные рекомендации<img src="' + I + '98328.svg" alt="" width="15" height="15"></button>' +
           '<label class="agree"><input type="checkbox" name="agree"><span class="agree__box"></span><span>Я согласен(на) с <a href="#" data-open="policy">политикой конфиденциальности</a></span></label></div></form>' +
-          '<div class="quiz__ctrl" style="margin-top:30px"><div><button class="q-btn q-btn--close" data-close><img src="' + I + 'c964a.svg" alt="" width="24" height="24">Закрыть</button>' +
-          '<button class="q-btn q-btn--back" data-q="back" aria-label="Назад"><img src="' + I + '6d4da.svg" alt="" width="24" height="24"></button></div></div>';
+          '<div class="quiz__ctrl" style="margin-top:30px"><div><button class="q-btn q-btn--close" data-close><img src="' + I + 'c964a.svg" alt="" width="24" height="24">Закрыть</button></div></div>';
         initForm($('form', el), function () {
           return QUIZ.map(function (q, i) { return { q: q.q, a: self.ans[i].map(function (k) { return q.a[k][1]; }) }; });
         });
@@ -295,11 +288,11 @@
               '<span class="q-item__l">' + icon(a[0]) + '<span class="q-item__t">' + esc(a[1]) + '</span></span><span class="q-item__r"></span></button>';
           }).join('') + '</div>' +
           '<div class="quiz__ctrl"><div><button class="q-btn q-btn--close" data-close><img src="' + I + 'c964a.svg" alt="" width="24" height="24">Закрыть</button>' +
-          (this.step > 0 ? '<button class="q-btn q-btn--back" data-q="back" aria-label="Назад"><img src="' + I + '6d4da.svg" alt="" width="24" height="24"></button>' : '') +
+          '<button class="q-btn q-btn--back" data-q="back" aria-label="Назад"' + (this.step > 0 ? '' : ' disabled') + '><img src="' + I + '6d4da.svg" alt="" width="24" height="24"></button>' +
           '</div><div><button class="q-btn q-btn--skip" data-q="skip">Пропустить</button>' +
-          '<button class="q-btn q-btn--next" data-q="next"' + (sel.length ? '' : ' disabled') + '>Далее<img src="' + I + '2c5e3.svg" alt="" width="24" height="24"></button></div></div>';
+          '<button class="q-btn q-btn--next" data-q="next">Далее<img src="' + I + '2c5e3.svg" alt="" width="24" height="24"></button></div></div>';
       }
-      var first = $('.q-item, .channel', el);
+      var first = $('.q-item', el);
       if (first) first.focus();
     }
   };
@@ -316,9 +309,10 @@
           else { var j = sel.indexOf(q.a.length - 1); if (j > -1) sel.splice(j, 1); sel.push(k); }
           Quiz.render();
         } else {
-          Quiz.ans[Quiz.step] = [k];
+          Quiz.ans[Quiz.step] = [k]; // как в прототипе: выбор можно поменять, переход — по «Далее»
           Quiz.render();
-          setTimeout(function () { Quiz.step++; Quiz.render(); }, 250);
+          var cur = $('.q-item[data-k="' + k + '"]', Quiz.el);
+          if (cur) cur.focus();
         }
         return;
       }

@@ -650,3 +650,28 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .slide1__bottom .quote--small{margin-bottom:-15px}
 }
 @media (max-width:1100px){.slide1__leafs{width:120px;height:126px}}
+
+/* ===== Поля контактов (как в прототипе: каждое — сразу поле ввода) ===== */
+.contacts{display:flex;gap:20px;margin-bottom:20px}
+.contact{display:flex;align-items:center;gap:10px;height:63px;padding:0 10px;width:182px;border-radius:10px;background:rgba(252,252,252,.8);box-shadow:var(--shadow);border:1.5px solid transparent;cursor:text;transition:border-color .2s,background-color .2s}
+.contact img{flex-shrink:0}
+.contact input{flex:1;min-width:0;border:0;outline:0;background:none;padding:0;font:500 16px/1.208 var(--sans);letter-spacing:.02em;color:var(--main2)}
+.contact input::placeholder{color:#59817b;opacity:1}
+.contact:hover{background:#fff}
+.contact:focus-within{border-color:#6aaa3f;background:#fff}
+.contact.is-error{border-color:#cd6f6f}
+.contacts--pop{flex-wrap:wrap;gap:11px;margin:0}
+.contacts--pop .contact{width:calc(50% - 5.5px);background:#fcfcfc}
+.contacts--pop .contact--wide{width:100%}
+.contacts--col{flex-direction:column;gap:10px;margin:0}
+.contacts--col .contact{width:100%}
+.form-msg{margin:-8px 0 14px;font-size:14px;color:#cd6f6f}
+.lead-form--pop .form-msg{margin:10px 0 0}
+@media (max-width:760px){.contacts{flex-direction:column;gap:10px}.contact,.contacts--pop .contact{width:100%}}
+
+/* ===== Квиз по прототипу ===== */
+.q-item.is-on{border-color:var(--main);background:#e9f5e3}
+.q-btn--back:disabled{opacity:.4;cursor:default;pointer-events:none}
+.q-btn--close:hover,.btn-close:hover{background:#cd6f6f;border-color:#cd6f6f;color:#fff}
+.q-btn--close:hover img,.btn-close:hover img{filter:brightness(0) invert(1)}
+.quiz__progress{display:none}

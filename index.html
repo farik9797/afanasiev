@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:wght@600&family=Onest:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=24">
+<link rel="stylesheet" href="assets/css/style.css?v=26">
 </head>
 <body>
 <a class="skip" href="#content">Перейти к содержимому</a>
@@ -214,13 +214,8 @@
         <h2 class="h2 h2--dark">Второй бесплатный урок<br>+ бонусы</h2>
         <p class="p lesson2__lead">Получите второй урок курса и 3 полезных бонуса для вашего здоровья и комфорта</p>
         <form class="lead-form" data-form="lesson2" novalidate>
-          <div class="channels" role="radiogroup" aria-label="Куда прислать урок">
-            <button type="button" class="channel" data-channel="email" role="radio" aria-checked="false"><img loading="lazy" decoding="async" src="assets/img/75ec4.svg" alt="" aria-hidden="true" width="23" height="23">Ваш email</button>
-            <button type="button" class="channel" data-channel="telegram" role="radio" aria-checked="false"><img loading="lazy" decoding="async" src="assets/img/fac9e.svg" alt="" aria-hidden="true" width="23" height="23">Telegram</button>
-            <button type="button" class="channel" data-channel="whatsapp" role="radio" aria-checked="false"><img loading="lazy" decoding="async" src="assets/img/d197a.svg" alt="" aria-hidden="true" width="23" height="23">WhatsApp</button>
-          </div>
-          <input class="field" type="text" name="contact" hidden autocomplete="off" aria-label="Контакт">
-          <input type="hidden" name="channel">
+          <div class="contacts" role="group" aria-label="Куда прислать урок"><label class="contact"><img src="assets/img/75ec4.svg" alt="" aria-hidden="true" width="23" height="23"><input type="email" name="email" placeholder="Ваш email" autocomplete="email" inputmode="email" spellcheck="false" aria-label="Email"></label><label class="contact"><img src="assets/img/fac9e.svg" alt="" aria-hidden="true" width="23" height="23"><input type="text" name="telegram" placeholder="Telegram" autocomplete="off" spellcheck="false" aria-label="Telegram: @username или телефон"></label><label class="contact"><img src="assets/img/d197a.svg" alt="" aria-hidden="true" width="23" height="23"><input type="tel" name="whatsapp" placeholder="WhatsApp" autocomplete="tel" inputmode="tel" aria-label="WhatsApp: номер телефона"></label></div>
+          <p class="form-msg" aria-live="polite" hidden></p>
           <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form-send">
             <button type="submit" class="btn btn--submit" disabled>Получите второй урок бесплатно<img loading="lazy" decoding="async" src="assets/img/98328.svg" alt="" aria-hidden="true" width="15" height="15"></button>
@@ -333,13 +328,8 @@
     <h2 class="pop__title" id="zapis-title">Записаться на курс</h2>
     <p class="pop__sub">Укажите ваши данные и мы пришлём вам приглашение</p>
     <form class="lead-form lead-form--pop" data-form="zapis" novalidate>
-      <div class="channels channels--pop" role="radiogroup" aria-label="Куда прислать приглашение">
-        <button type="button" class="channel channel--wide" data-channel="email" role="radio" aria-checked="false"><img loading="lazy" decoding="async" src="assets/img/75ec4.svg" alt="" aria-hidden="true" width="23" height="23">Ваш email</button>
-        <button type="button" class="channel" data-channel="telegram" role="radio" aria-checked="false"><img loading="lazy" decoding="async" src="assets/img/fac9e.svg" alt="" aria-hidden="true" width="23" height="23">Telegram</button>
-        <button type="button" class="channel" data-channel="whatsapp" role="radio" aria-checked="false"><img loading="lazy" decoding="async" src="assets/img/d197a.svg" alt="" aria-hidden="true" width="23" height="23">WhatsApp</button>
-      </div>
-      <input class="field" type="text" name="contact" hidden autocomplete="off" aria-label="Контакт">
-      <input type="hidden" name="channel">
+      <div class="contacts contacts--pop" role="group" aria-label="Куда прислать приглашение"><label class="contact contact--wide"><img src="assets/img/75ec4.svg" alt="" aria-hidden="true" width="23" height="23"><input type="email" name="email" placeholder="Ваш email" autocomplete="email" inputmode="email" spellcheck="false" aria-label="Email"></label><label class="contact"><img src="assets/img/fac9e.svg" alt="" aria-hidden="true" width="23" height="23"><input type="text" name="telegram" placeholder="Telegram" autocomplete="off" spellcheck="false" aria-label="Telegram: @username или телефон"></label><label class="contact"><img src="assets/img/d197a.svg" alt="" aria-hidden="true" width="23" height="23"><input type="tel" name="whatsapp" placeholder="WhatsApp" autocomplete="tel" inputmode="tel" aria-label="WhatsApp: номер телефона"></label></div>
+          <p class="form-msg" aria-live="polite" hidden></p>
       <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="form-send form-send--pop">
         <button type="submit" class="btn btn--submit btn--submit-lg" disabled>Отправить<img loading="lazy" decoding="async" src="assets/img/98328.svg" alt="" aria-hidden="true" width="15" height="15"></button>
@@ -356,13 +346,8 @@
     <h2 class="pop__title" id="l2-title">Получить второй бесплатный урок + бонусы</h2>
     <p class="pop__sub">Укажите ваши данные и мы пришлём вам приглашение</p>
     <form class="lead-form lead-form--pop" data-form="lesson2-popup" novalidate>
-      <div class="channels channels--pop" role="radiogroup" aria-label="Куда прислать урок">
-        <button type="button" class="channel channel--wide" data-channel="email" role="radio" aria-checked="false"><img loading="lazy" decoding="async" src="assets/img/75ec4.svg" alt="" aria-hidden="true" width="23" height="23">Ваш email</button>
-        <button type="button" class="channel" data-channel="telegram" role="radio" aria-checked="false"><img loading="lazy" decoding="async" src="assets/img/fac9e.svg" alt="" aria-hidden="true" width="23" height="23">Telegram</button>
-        <button type="button" class="channel" data-channel="whatsapp" role="radio" aria-checked="false"><img loading="lazy" decoding="async" src="assets/img/d197a.svg" alt="" aria-hidden="true" width="23" height="23">WhatsApp</button>
-      </div>
-      <input class="field" type="text" name="contact" hidden autocomplete="off" aria-label="Контакт">
-      <input type="hidden" name="channel">
+      <div class="contacts contacts--pop" role="group" aria-label="Куда прислать урок"><label class="contact contact--wide"><img src="assets/img/75ec4.svg" alt="" aria-hidden="true" width="23" height="23"><input type="email" name="email" placeholder="Ваш email" autocomplete="email" inputmode="email" spellcheck="false" aria-label="Email"></label><label class="contact"><img src="assets/img/fac9e.svg" alt="" aria-hidden="true" width="23" height="23"><input type="text" name="telegram" placeholder="Telegram" autocomplete="off" spellcheck="false" aria-label="Telegram: @username или телефон"></label><label class="contact"><img src="assets/img/d197a.svg" alt="" aria-hidden="true" width="23" height="23"><input type="tel" name="whatsapp" placeholder="WhatsApp" autocomplete="tel" inputmode="tel" aria-label="WhatsApp: номер телефона"></label></div>
+          <p class="form-msg" aria-live="polite" hidden></p>
       <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="form-send form-send--pop">
         <button type="submit" class="btn btn--submit btn--submit-lg" disabled>Отправить<img loading="lazy" decoding="async" src="assets/img/98328.svg" alt="" aria-hidden="true" width="15" height="15"></button>
@@ -408,6 +393,6 @@
   </div>
 </div>
 
-<script src="assets/js/main.js?v=8"></script>
+<script src="assets/js/main.js?v=9"></script>
 </body>
 </html>
