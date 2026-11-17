@@ -12,7 +12,7 @@
     var slides = $$('.slide', hero);
     var dots = $$('.hero__dots button', hero);
     var cur = 0;
-    // смену слайда задаёт анимация заполнения активной точки (7 с, см. dotFill в CSS)
+    // смену слайда задаёт анимация заполнения активной точки (5 с, см. dotFill в CSS)
     var go = function (i) {
       cur = (i + slides.length) % slides.length;
       track.style.transform = 'translateX(' + (-100 * cur) + '%)';

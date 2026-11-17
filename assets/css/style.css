@@ -148,7 +148,7 @@ h1,h2,h3,.h-hero{text-wrap:balance}
 .hero__dots button{position:relative;overflow:hidden;width:33px;height:8px;border-radius:900px;background:#c9ecc5}
 /* активная точка заполняется за время показа слайда, по окончании — следующий слайд */
 .hero__dots button::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--main);transform:scaleX(1);transform-origin:left center;opacity:0;transition:opacity .7s ease}
-.hero__dots button.is-active::after{opacity:1;transition:none;animation:dotFill 7s linear forwards}
+.hero__dots button.is-active::after{opacity:1;transition:none;animation:dotFill 5s linear forwards}
 .hero.is-paused .hero__dots button.is-active::after{animation-play-state:paused}
 @keyframes dotFill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 
