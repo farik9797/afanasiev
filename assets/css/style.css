@@ -838,3 +838,9 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .pop--img:not(.pop--thanks) .pop__hand img{width:120px;margin:4px 0 0 20px}
   .pop__dish{width:230px;height:220px;right:-14px;top:-40px}
 }
+
+/* 1920+: фото слайда 1 не растягиваем по ширине (иначе режется голова), правый край как на 1512, левый уходит в фон */
+@media (min-width:1513px){
+  .slide1__bg img{left:auto;right:calc(100% - var(--gut) - 1188px);width:min(calc(var(--gut) + 1188px),1349px);object-position:100% 0;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 140px);mask-image:linear-gradient(90deg,transparent 0,#000 140px)}
+}
