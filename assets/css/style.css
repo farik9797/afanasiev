@@ -619,7 +619,8 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 .menu{letter-spacing:0}
 /* блик сверху у зелёных кнопок (эллипс из компонента кнопки в макете) */
 .btn--header::before,.q-btn--next::before,.quiz-fab::before{content:"";position:absolute;left:50%;top:calc(50% - 30px);width:180px;height:180px;transform:translate(-50%,-50%);background:url(../img/310b1.svg) center/contain no-repeat;pointer-events:none}
-.q-btn--next,.quiz-fab{position:relative;overflow:hidden}
+.q-btn--next{position:relative;overflow:hidden}
+.quiz-fab{overflow:hidden}
 .btn--header>*,.q-btn--next>*,.quiz-fab>*{position:relative}
 .slide1__leafs{width:231.8px;height:243px;object-fit:cover;object-position:100% 0}
 @media (min-width:1101px){
@@ -675,3 +676,15 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 .q-btn--close:hover,.btn-close:hover{background:#cd6f6f;border-color:#cd6f6f;color:#fff}
 .q-btn--close:hover img,.btn-close:hover img{filter:brightness(0) invert(1)}
 .quiz__progress{display:none}
+/* квиз на телефоне: «Закрыть», «назад» и «Далее» в одну строку */
+@media (max-width:760px){
+  .quiz__ctrl{flex-wrap:nowrap;gap:8px}
+  .quiz__ctrl .q-btn{height:46px;padding:0 12px;font-size:15px}
+  .quiz__ctrl .q-btn--back{width:46px;padding:0}
+  .quiz__ctrl .q-btn img{width:20px;height:20px}
+  .q-item{padding:8px 14px 8px 8px;gap:12px}
+}
+@media (max-width:760px){
+  .main-sec__text .p br,.ticks br,.change p br,.changes__lead br{display:none}
+  .main-sec__text .p{min-height:0}
+}
