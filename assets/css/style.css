@@ -940,3 +940,10 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   #modal-lesson2 .contacts--pop .contact--wide{width:100%}
   .pop--thanks .pop__sub--lg{font-size:16px}
 }
+/* телефон по макету mob2 */
+@media (max-width:760px){
+  .slide--1{background:#e6eee6}
+  .slide1__content .label{margin-top:-12px;position:relative;z-index:2}
+  .score-box{width:100%;justify-content:center}
+  .footer .socials{width:100%;justify-content:center;border-top:1px solid #c9d8d4;padding-top:22px}
+}
