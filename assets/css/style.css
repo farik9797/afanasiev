@@ -890,3 +890,6 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .mobbar__zapis span,.mobbar__zapis img{position:relative}
   footer.footer{padding-bottom:110px}
 }
+
+/* телефон: текст «В подарок» не прилипает к краю зелёной плашки, пункты «Что вы получите» не слипаются */
+@media (max-width:760px){.youget__list li.youget__gift{padding:12px 6px}.youget__list{gap:16px}}
