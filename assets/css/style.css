@@ -971,3 +971,16 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .slide1__content .feats li:nth-child(2){display:flex;order:3}
 }
 @media (max-width:760px){.slide1__content .feats li{width:auto!important;max-width:none}.slide1__content .feats li br{display:none}}
+
+/* планшет 761–1100: слайдер по макету Tablet2 (slider-track) */
+@media (min-width:761px) and (max-width:1100px){
+  .hero .slide{min-height:577px}
+  .slide--1{background:#e6eee6}
+  .slide1__content .p{margin-right:20px}
+  .slide1__leafs{width:96px;height:130px}
+  .slide1__bottom .quote--small{transform:rotate(-7.95deg) scale(1.4);transform-origin:right bottom;margin-right:20px}
+  .slide__content .feats li br.m:not(.only-mob){display:inline}
+  .slide--2 .play--big{left:calc(51% - 30px);top:62%}
+  .slide3__bg{width:44%}
+}
+@media (min-width:761px) and (max-width:1100px){.slide3__bg::after{background:linear-gradient(90deg,#fbfaf5 0,#fbfaf5 5%,rgba(251,250,245,0) 24%)}.slide--3 .slide__content .p{max-width:calc(56vw + 10px)}}
