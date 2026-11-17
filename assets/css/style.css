@@ -609,3 +609,7 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .main-sec__leafs{right:calc(-6.6px - var(--gutw))}
   .main-sec__leafs-blur{right:calc(-22px - var(--gutw))}
 }
+/* «Пройти квиз» — точные параметры из макета (кадр 136:6621) */
+.quiz-fab{height:63px;min-width:177px;padding:10px 16px;gap:10px;font-size:16px;border:1px solid #cdcdcd;box-shadow:7px 7px 57.2px 10px rgba(99,188,96,.53)}
+.quiz-fab:hover{box-shadow:7px 7px 57.2px 14px rgba(99,188,96,.6);filter:brightness(1.06)}
+@media (max-width:760px){.quiz-fab{height:52px;min-width:0;box-shadow:4px 4px 30px 4px rgba(99,188,96,.5)}}
