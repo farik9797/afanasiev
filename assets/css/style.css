@@ -614,3 +614,38 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 .quiz-fab{height:63px;min-width:177px;padding:10px 16px;gap:10px;font-size:16px;border:1px solid #cdcdcd;box-shadow:7px 7px 57.2px 10px rgba(99,188,96,.53)}
 .quiz-fab:hover{box-shadow:7px 7px 57.2px 14px rgba(99,188,96,.6);filter:brightness(1.06)}
 @media (max-width:760px){.quiz-fab{height:52px;min-width:0;box-shadow:4px 4px 30px 4px rgba(99,188,96,.5)}}
+
+/* ===== Доводка под макет 1512 (сверка 17.11) ===== */
+.menu{letter-spacing:0}
+/* блик сверху у зелёных кнопок (эллипс из компонента кнопки в макете) */
+.btn--header::before,.q-btn--next::before,.quiz-fab::before{content:"";position:absolute;left:50%;top:calc(50% - 30px);width:180px;height:180px;transform:translate(-50%,-50%);background:url(../img/310b1.svg) center/contain no-repeat;pointer-events:none}
+.q-btn--next,.quiz-fab{position:relative;overflow:hidden}
+.btn--header>*,.q-btn--next>*,.quiz-fab>*{position:relative}
+.slide1__leafs{width:231.8px;height:243px;object-fit:cover;object-position:100% 0}
+@media (min-width:1101px){
+  .header__inner{gap:0}
+  .header .logo{width:300px}
+  .btn--header{margin-left:37px}
+  .hero{height:576px}
+  .main-sec__inner{padding-bottom:34px}
+  .header__inner{height:82px}
+  .main-sec__text .p{min-height:51px}
+  .stats{gap:114px}
+  .stats div:nth-child(1){width:60px}
+  .stats div:nth-child(2){width:134.4px}
+  .stats div:nth-child(3){width:95px}
+  .stats div+div::before{left:-57px}
+  .main-sec__quote{left:1089px;top:52px}
+  .main-sec__leafs{top:-29px;object-fit:fill}
+  .main-sec__leafs-blur{top:-37px;object-fit:fill}
+  .changes{padding-bottom:78px}
+  .changes__quote{width:245px}
+}
+@media (min-width:761px){
+  .footer__top{align-items:center;min-height:63.8px}
+  .footer .menu,.socials,.footer__contacts{padding-top:0}
+}
+@media (min-width:1101px){
+  .header .menu{transform:translateX(-6px)}
+  .slide1__bottom .quote--small{margin-bottom:-15px}
+}
