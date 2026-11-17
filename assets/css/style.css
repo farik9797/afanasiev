@@ -252,9 +252,10 @@ span.adv__icon{background:#fff;border:1px solid #76b599;border-radius:100px;over
 .lesson2__left .h2{margin-bottom:20px}
 .lesson2__lead{width:405px;margin-bottom:20px}
 .lesson2__right{width:622px;display:flex;flex-direction:column;align-items:center;gap:71px;position:relative;z-index:1}
-.lesson2__quote{transform:rotate(-7.95deg);text-align:center;position:relative}
-.lesson2__quote p{font-size:19.83px}
-.lesson2__quote img{position:absolute;left:50%;top:80px;width:15.5px;height:53px;margin-left:30px}
+/* как в макете: надпись по центру над средней карточкой, стрелка ровно под ней (не повёрнута) */
+.lesson2__quote{position:relative;width:263px;height:83px;text-align:center}
+.lesson2__quote p{font-size:19.83px;transform:rotate(-7.95deg);margin-top:8px}
+.lesson2__quote img{position:absolute;left:123.7px;top:74.3px;width:15.5px;height:52.8px}
 .bonuses{display:flex;gap:20px;width:100%}
 .bonus{flex:1;background:rgba(255,255,255,.8);border-radius:12px;box-shadow:var(--shadow);padding:14px 13px;display:flex;flex-direction:column;gap:19px}
 .bonus h3{font-size:17px;font-weight:500;color:var(--main2);margin-bottom:-9px}
