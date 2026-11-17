@@ -950,3 +950,24 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 
 /* десктоп: строка модуля 78px как в макете (было 80) */
 @media (min-width:1101px){.modules li{padding:19px 0}.modules li:first-child{padding-top:0}.modules li:last-child{padding-bottom:0}}
+
+/* телефон: слайдер по макету mob2 */
+@media (max-width:760px){
+  :root{--pad:20px}
+  .slide2__bg{height:260px}
+  .slide3__bg{height:240px}
+  .slide--2 .play--big{left:50%;top:58%;transform:translate(-50%,-50%)}
+  .slide--2 .slide__content,.slide--3 .slide__content{padding-top:0}
+  .slide--2 .slide__content .label,.slide--3 .slide__content .label{margin-top:-12px;position:relative;z-index:2}
+  .slide--3 .h-hero br{display:none}
+  .slide--3 .h-hero{text-wrap:wrap}
+  /* кнопка и пункты ближе к тексту */
+  .slide__content>.btn,.slide1__content>.btn{margin-top:18px}
+  .slide__content .feats,.slide1__content .feats{margin-top:20px}
+  .slide--2 .slide__content>.btn{width:326px;max-width:100%;justify-content:center}
+  /* переносы в пунктах как в макете */
+  .slide__content .feats li br.m{display:inline}
+  /* слайд 1: три пункта, «Персональные рекомендации» третьим */
+  .slide1__content .feats li:nth-child(2){display:flex;order:3}
+}
+@media (max-width:760px){.slide1__content .feats li{width:auto!important;max-width:none}.slide1__content .feats li br{display:none}}
