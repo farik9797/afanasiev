@@ -833,3 +833,8 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .changes__quote{width:max-content}
 }
 @media (min-width:1101px) and (max-width:1300px){.changes__quote{position:absolute;left:auto;right:70px;bottom:-60px;margin:0}}
+@media (max-width:760px){
+  .pop--img:not(.pop--thanks) .pop__hand p{font-size:24px;max-width:150px;line-height:1.15}
+  .pop--img:not(.pop--thanks) .pop__hand img{width:120px;margin:4px 0 0 20px}
+  .pop__dish{width:230px;height:220px;right:-14px;top:-40px}
+}

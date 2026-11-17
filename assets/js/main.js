@@ -38,8 +38,6 @@
     prev.addEventListener('click', function () { if (cur > 0) go(cur - 1); });
     next.addEventListener('click', function () { if (cur < slides.length - 1) go(cur + 1); });
     dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); }); });
-    hero.addEventListener('mouseenter', pause);
-    hero.addEventListener('mouseleave', auto);
     hero.addEventListener('focusin', pause);
     hero.addEventListener('focusout', auto);
     var x0 = null;
@@ -110,6 +108,16 @@
   };
   window.AF = { open: openModal, close: closeModal };
 
+  // якорь на скрытый блок (на телефоне нет «Здоровый кишечник») — ведём к следующему видимому
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a || a.hasAttribute('data-open')) return;
+    var t = document.getElementById(a.getAttribute('href').slice(1));
+    if (!t || t.offsetParent !== null) return;
+    var n = t.nextElementSibling;
+    while (n && n.offsetParent === null) n = n.nextElementSibling;
+    if (n) { e.preventDefault(); n.scrollIntoView({ behavior: 'smooth' }); }
+  });
   document.addEventListener('click', function (e) {
     var t = e.target.closest('[data-open]');
     if (t) {
