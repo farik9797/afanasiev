@@ -749,16 +749,6 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 @media (max-width:760px){
   .only-mob{display:inline}
   .hide-mob{display:none}
-  .quiz-fab{display:none}
-  /* нижняя панель «Квиз / Записаться» из макета */
-  .mobbar{display:flex;position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;width:335px;max-width:calc(100% - 24px);height:78px;padding:0 20px;gap:16px;align-items:center;border-radius:900px;border:1px solid #c9c9c9;background:linear-gradient(to bottom,rgba(242,248,243,.33),#f2f8f3);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-  body.is-locked .mobbar{display:none}
-  .mobbar button{height:49px;border-radius:100px;display:flex;align-items:center;justify-content:center;gap:10px;font:500 16px/1 var(--sans);letter-spacing:.02em}
-  .mobbar__quiz{flex:0 0 115px;background:rgba(197,243,178,.56);border:1px solid #9bbc87;color:var(--main)}
-  .mobbar__zapis{flex:1;background:var(--grad);color:#fff;position:relative;overflow:hidden}
-  .mobbar__zapis::before{content:"";position:absolute;left:50%;top:calc(50% - 30px);width:180px;height:180px;transform:translate(-50%,-50%);background:url(../img/310b1.svg) center/contain no-repeat}
-  .mobbar__zapis span,.mobbar__zapis img{position:relative}
-  footer.footer{padding-bottom:110px}
   /* слайдер: фото сверху, потом текст; на 1-м слайде две выгоды, без «Уже прошли тест» */
   .slide1__bg{order:-1;height:200px}
   .slide1__bg img{object-position:50% 15%}
@@ -885,4 +875,18 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .footer .menu a{white-space:nowrap}
   .footer__contacts{width:auto}
   .slide1__content>*{position:relative;z-index:1}
+}
+
+/* планшет и телефон (≤1100): вместо плавающей «Пройти квиз» — нижняя панель «Квиз / Записаться» (на планшете кнопка закрывала контент) */
+@media (max-width:1100px){
+  .quiz-fab{display:none}
+  /* нижняя панель «Квиз / Записаться» из макета */
+  .mobbar{display:flex;position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;width:335px;max-width:calc(100% - 24px);height:78px;padding:0 20px;gap:16px;align-items:center;border-radius:900px;border:1px solid #c9c9c9;background:linear-gradient(to bottom,rgba(242,248,243,.33),#f2f8f3);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  body.is-locked .mobbar{display:none}
+  .mobbar button{height:49px;border-radius:100px;display:flex;align-items:center;justify-content:center;gap:10px;font:500 16px/1 var(--sans);letter-spacing:.02em}
+  .mobbar__quiz{flex:0 0 115px;background:rgba(197,243,178,.56);border:1px solid #9bbc87;color:var(--main)}
+  .mobbar__zapis{flex:1;background:var(--grad);color:#fff;position:relative;overflow:hidden}
+  .mobbar__zapis::before{content:"";position:absolute;left:50%;top:calc(50% - 30px);width:180px;height:180px;transform:translate(-50%,-50%);background:url(../img/310b1.svg) center/contain no-repeat}
+  .mobbar__zapis span,.mobbar__zapis img{position:relative}
+  footer.footer{padding-bottom:110px}
 }
