@@ -856,3 +856,12 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .art3{left:0;right:auto;transform-origin:top left;transform:translateX(var(--tx,0)) scale(var(--s,1))}
 }
 @media (min-width:1101px) and (max-width:1511px){.art3>.art3__quote,.art3>.art3__sign,.art3>.art3__heart{display:none}}
+
+/* 1301–1439: цитаты держат отступ от правого края как на 1440 (на 1366 заходили под ветки и за край) */
+@media (min-width:1301px) and (max-width:1439px){
+  .main-sec__quote{width:214px;z-index:2;left:min(1089px,calc(100vw - 236px))}
+  .main-sec__quote p{font-size:18px}
+  .main-sec__leafs{width:130px;height:320px;top:auto;bottom:0}
+  .main-sec__leafs-blur{display:none}
+  .changes__quote{position:absolute;left:auto;right:70px;bottom:-60px;margin:0}
+}
