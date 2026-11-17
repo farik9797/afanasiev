@@ -1008,3 +1008,7 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 
 /* телефон по mob2: фото «Для кого» 245px, ровные отступы в модулях */
 @media (max-width:760px){.for__photo{min-height:245px}.for{padding-bottom:20px}.modules div{gap:8px}.modules li{row-gap:10px}.modules em{margin-top:0}}
+
+/* десктоп pixel perfect: подпись цитаты справа, нижний отступ подвала */
+@media (min-width:1101px){.main-sec__quote span{text-align:right;padding-right:24px}.footer{padding-bottom:25px}}
+@media (min-width:1101px){.program__left .p{margin-bottom:33px}.changes__quote{bottom:-50px}}
