@@ -1012,3 +1012,5 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 /* десктоп pixel perfect: подпись цитаты справа, нижний отступ подвала */
 @media (min-width:1101px){.main-sec__quote span{text-align:right;padding-right:24px}.footer{padding-bottom:25px}}
 @media (min-width:1101px){.program__left .p{margin-bottom:33px}.changes__quote{bottom:-50px}}
+@media (min-width:1101px) and (max-width:1400px){.bannerline__inner{padding-left:225px;padding-right:20px;gap:26px}}
+@media (min-width:1101px) and (max-width:1340px){.bannerline__leafs,.bannerline__leafs-blur{display:none}}

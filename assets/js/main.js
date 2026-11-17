@@ -45,7 +45,8 @@
     track.addEventListener('touchend', function (e) {
       if (x0 === null) return;
       var dx = e.changedTouches[0].clientX - x0;
-      if (Math.abs(dx) > 40) { go(cur + (dx < 0 ? 1 : -1)); auto(); }
+      var to = cur + (dx < 0 ? 1 : -1); // как стрелки: без перескока с последнего на первый
+      if (Math.abs(dx) > 40 && to >= 0 && to < slides.length) { go(to); auto(); }
       x0 = null;
     });
     go(0); auto();
