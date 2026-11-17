@@ -984,3 +984,12 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .slide3__bg{width:44%}
 }
 @media (min-width:761px) and (max-width:1100px){.slide3__bg::after{background:linear-gradient(90deg,#fbfaf5 0,#fbfaf5 5%,rgba(251,250,245,0) 24%)}.slide--3 .slide__content .p{max-width:calc(56vw + 10px)}}
+
+/* десктоп: текст слайдов поверх фото (на 1512 фото слайда 2 закрывало «Поддержка устойчивых привычек») */
+.slide__content{z-index:2}
+@media (min-width:1512px){
+  .slide--2 .play--big{left:327px}
+  .art3>.art3__quote{top:34px}
+  .art3>.art3__sign{top:126px}
+  .art3>.art3__heart{top:150px}
+}
