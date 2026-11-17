@@ -993,3 +993,15 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .art3>.art3__sign{top:126px}
   .art3>.art3__heart{top:150px}
 }
+
+/* планшет по макету Tablet2: поля 40px, фото «Для кого» 245px, фрукты в баннере на всю высоту, цитата крупнее */
+@media (min-width:761px) and (max-width:1100px){
+  :root{--pad:40px}
+  .for__photo{min-height:245px}
+  .bannerline__fruits{top:0;bottom:0;transform:none;height:100%;width:240px;object-fit:cover;object-position:right center}
+  .main-sec__quote{width:266px;right:90px}
+  .main-sec__quote p{font-size:22.95px}
+}
+@media (min-width:761px) and (max-width:1100px){.video-frame{max-width:62%}}
+@media (min-width:761px) and (max-width:1100px){.main-sec__quote{width:240px;right:60px}.main-sec__quote p{font-size:21px}}
+@media (min-width:761px) and (max-width:810px){.main-sec__quote{width:216px;right:50px}.main-sec__quote p{font-size:18.5px}}
