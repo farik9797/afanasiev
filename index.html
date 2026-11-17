@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:wght@600&family=Onest:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=31">
+<link rel="stylesheet" href="assets/css/style.css?v=38">
 </head>
 <body>
 <a class="skip" href="#content">Перейти к содержимому</a>
@@ -43,7 +43,7 @@
       <div class="slide1__bg"><img src="assets/img/f34d3.webp" alt="Евгений Афанасьев" fetchpriority="high" width="2241" height="900"></div>
       <img class="slide1__leafs" src="assets/img/6a614.webp" alt="" aria-hidden="true">
       <div class="slide__content slide1__content">
-        <span class="label">Бесплатный курс</span>
+        <span class="label"><span class="hide-mob">Бесплатный курс</span><span class="only-mob">Бесплатный тест</span></span>
         <h1 class="h-hero">Какой подход к питанию подойдёт именно вам?</h1>
         <p class="p">Пройдите короткий тест и получите персональные рекомендации по питанию для здоровья пищеварения, энергии и хорошего самочувствия</p>
         <ul class="feats">
@@ -51,7 +51,7 @@
           <li><span class="ico"><img src="assets/img/fd20f.svg" alt="" aria-hidden="true"></span>Персональные <br>рекомендации</li>
           <li><span class="ico ico--white"><img src="assets/img/6cedf.svg" alt="" aria-hidden="true" class="ico__in"></span>Без регистрации <br>и спама</li>
         </ul>
-        <button class="btn" data-open="quiz"><img src="assets/img/a1d2c.svg" alt="" aria-hidden="true" width="29" height="29">Понять, подходит ли мне курс<img src="assets/img/24d83.svg" alt="" aria-hidden="true" width="15" height="15"></button>
+        <button class="btn slide1__btn" data-open="quiz"><img class="hide-tab" src="assets/img/a1d2c.svg" alt="" aria-hidden="true" width="29" height="29"><span class="hide-tab">Понять, подходит ли мне курс</span><span class="only-tab">Начать тест</span><img src="assets/img/24d83.svg" alt="" aria-hidden="true" width="15" height="15"></button>
         <div class="slide1__bottom">
           <div class="passed">
             <span class="avatars"><img src="assets/img/5bede.webp" alt="" aria-hidden="true"><img src="assets/img/6f191.webp" alt="" aria-hidden="true"><img src="assets/img/375ae.webp" alt="" aria-hidden="true"></span>
@@ -133,9 +133,9 @@
 <!-- ADVANTAGES -->
 <section class="adv">
   <div class="container adv__inner">
-    <div class="adv__item"><span class="adv__icon"><img loading="lazy" decoding="async" class="adv__glow adv__glow--1" src="assets/img/8214e.svg" alt="" aria-hidden="true"><img loading="lazy" decoding="async" class="adv__ic" src="assets/img/6b398.svg" alt="" aria-hidden="true"></span>Индивидуальный<br>подход</div>
+    <div class="adv__item"><span class="adv__icon"><img loading="lazy" decoding="async" class="adv__glow adv__glow--1" src="assets/img/8214e.svg" alt="" aria-hidden="true"><img loading="lazy" decoding="async" class="adv__ic" src="assets/img/6b398.svg" alt="" aria-hidden="true"></span>Индивидуальный <br>подход</div>
     <div class="adv__item"><span class="adv__icon"><img loading="lazy" decoding="async" class="adv__glow adv__glow--2" src="assets/img/8214e.svg" alt="" aria-hidden="true"><span class="adv__hc"><img loading="lazy" decoding="async" src="assets/img/cbdc6.svg" alt="" aria-hidden="true" class="v1"><img loading="lazy" decoding="async" src="assets/img/7ed54.svg" alt="" aria-hidden="true" class="v2"><img loading="lazy" decoding="async" src="assets/img/899e2.svg" alt="" aria-hidden="true" class="v3"></span></span>Поддержка на протяжении всего курса</div>
-    <div class="adv__item"><img loading="lazy" decoding="async" class="adv__icon" src="assets/img/e221e.svg" alt="" aria-hidden="true">Долгосрочный<br>результат</div>
+    <div class="adv__item"><img loading="lazy" decoding="async" class="adv__icon" src="assets/img/e221e.svg" alt="" aria-hidden="true">Долгосрочный <br>результат</div>
     <div class="adv__item"><img loading="lazy" decoding="async" class="adv__icon" src="assets/img/a27e8.svg" alt="" aria-hidden="true">Простая и доступная форма курса</div>
   </div>
 </section>
@@ -164,8 +164,8 @@
     <div class="changes__note">
       <img loading="lazy" decoding="async" src="assets/img/f2ddb.svg" alt="" aria-hidden="true" class="changes__leaf">
       <p>В результате меняется не только работа кишечника, но и общее самочувствие, повышается уровень энергии и качество жизни</p>
-      <div class="quote changes__quote"><p>«Маленькие шаги приводят к большим переменам»</p><img loading="lazy" decoding="async" src="assets/img/bb64c.svg" alt="" aria-hidden="true"></div>
     </div>
+      <div class="quote changes__quote"><p>«Маленькие шаги приводят<br>к большим переменам»</p><img loading="lazy" decoding="async" src="assets/img/bb64c.svg" alt="" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -277,7 +277,7 @@
       <a class="btn btn--light" href="#lesson2">Получить второй урок бесплатно<img loading="lazy" decoding="async" src="assets/img/43a49.svg" alt="" aria-hidden="true" width="15" height="15"></a>
       <span>email или мессенджер - 2 минуты</span>
     </div>
-    <div class="bannerline__safe"><img loading="lazy" decoding="async" src="assets/img/f9312.svg" alt="" aria-hidden="true" width="35" height="35"><span>Без спама, без риска<br>и обязательств</span></div>
+    <div class="bannerline__safe"><img loading="lazy" decoding="async" src="assets/img/f9312.svg" alt="" aria-hidden="true" width="35" height="35"><span>Без спама, без риска <br>и обязательств</span></div>
   </div>
   <img loading="lazy" decoding="async" class="bannerline__leafs-blur" src="assets/img/8bbd0.webp" alt="" aria-hidden="true">
   <img loading="lazy" decoding="async" class="bannerline__leafs" src="assets/img/03f95.webp" alt="" aria-hidden="true">
@@ -305,7 +305,7 @@
   <div class="container">
     <div class="footer__top">
       <a class="logo" href="#top"><span class="logo__mark"><img loading="lazy" decoding="async" class="logo__circle" src="assets/img/b799f.svg" alt="" aria-hidden="true"><img loading="lazy" decoding="async" class="logo__leaf" src="assets/img/46c9a.webp" alt="" aria-hidden="true"></span><span class="logo__text"><b>Евгений Афанасьев</b><span>Интегративный нутрициолог</span></span></a>
-      <nav class="menu"><a href="#about">О курсе</a><a href="#program">Программа</a><a href="#reviews">Отзывы</a><a href="#" data-open="quiz">Квиз</a></nav>
+      <nav class="menu"><a href="#about">О курсе</a><a href="#program">Программа</a><a href="#reviews">Отзывы</a><a href="#" data-open="quiz">Квиз</a><a class="only-tab" href="#contacts">Контакты</a></nav>
       <div class="socials">
         <a href="#" aria-label="Telegram"><img loading="lazy" decoding="async" src="assets/img/6b528.svg" alt="" aria-hidden="true" width="17" height="17"></a>
         <a href="#" aria-label="Instagram"><img loading="lazy" decoding="async" src="assets/img/aa993.svg" alt="" aria-hidden="true" width="17" height="17"></a>
@@ -317,6 +317,7 @@
   </div>
 </footer>
 
+<div class="mobbar" role="group" aria-label="Быстрые действия"><button class="mobbar__quiz" data-open="quiz"><img src="assets/img/mobbar-quiz.svg" alt="" aria-hidden="true" width="21" height="25">Квиз</button><button class="mobbar__zapis" data-open="zapis"><span>Записаться</span><img src="assets/img/mobbar-edit.svg" alt="" aria-hidden="true" width="23" height="23"></button></div>
 <button class="btn quiz-fab" data-open="quiz"><img src="assets/img/quiz-btn.svg" alt="" aria-hidden="true">Пройти квиз</button>
 
 <!-- MODALS -->

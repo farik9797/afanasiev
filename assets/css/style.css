@@ -698,3 +698,138 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 }
 @media (max-width:1100px){.slide__content .p{width:auto}}
 @media (max-width:1100px){.slide__content>.btn{white-space:normal;height:auto;min-height:55px;padding-top:10px;padding-bottom:10px;text-align:left;max-width:100%}}
+
+/* ======================================================================
+   Планшет (Tablet2, 834) и телефон (mob2, 393) — по макетам, сверка 17.11
+   ====================================================================== */
+.only-mob,.only-tab{display:none}
+.mobbar{display:none}
+
+@media (max-width:1100px){
+  .only-tab{display:inline}
+  .hide-tab{display:none}
+  .footer .menu a.only-tab{display:inline}
+  /* шапка: бургер перед кнопкой */
+  .header .burger{order:2;margin-left:auto}
+  .header .btn--header{order:3;margin-left:20px}
+  /* «Здоровый кишечник»: текст на всю ширину, цифры по ширине, видео 464 + цитата справа */
+  .main-sec__inner{display:block;position:relative;padding-bottom:40px}
+  .main-sec__text .p br{display:none}
+  .stats{justify-content:space-between;gap:0}
+  .stats div+div::before{left:-50%}
+  .stats div{flex:0 0 auto}
+  .stats div:nth-child(2){position:relative}
+  .video-frame{width:464px;max-width:58%;margin-top:30px}
+  .main-sec__quote{display:flex;position:absolute;left:auto;right:150px;top:auto;bottom:150px;width:214px;font-size:18px}
+  .main-sec__quote p{font-size:18px}
+  .main-sec__leafs{display:block;right:-10px;top:auto;bottom:-20px;width:130px;height:320px;object-fit:fill}
+  .main-sec__leafs-blur{display:none}
+  /* преимущества 2×2, подпись в одну строку */
+  .adv__item br{display:none}
+  .adv__item{width:calc(50% - 8px)}
+  /* «Изменения»: цитата в свободной ячейке рядом с 5-й карточкой */
+  .changes .container{position:relative}
+  .changes__note{position:static}
+  .changes__quote{position:absolute;right:70px;bottom:180px;left:auto;top:auto;margin:0;width:245px;transform:rotate(-7.95deg)}
+  /* «Второй урок»: ветка слева, «Бонусы уже ждут вас!» над третьей карточкой */
+  .lesson2__leafs{display:block;left:-8px;top:40px;height:300px;width:86px}
+  .lesson2__leafs-blur{display:none}
+  .lesson2__right{position:relative;padding-top:70px}
+  .lesson2__quote{display:block;position:absolute;right:30px;top:-20px;width:150px;height:90px}
+  .lesson2__quote img{left:60px;top:46px}
+  /* баннер: фрукты слева, справа кнопка + подпись, гарантия, заголовок */
+  .bannerline__inner{flex-direction:column;align-items:flex-start;gap:12px;padding:20px var(--pad) 20px 260px}
+  .bannerline__cta{flex-direction:row;gap:14px;order:1}
+  .bannerline__cta span{width:auto;text-align:left}
+  .bannerline__safe{order:2;font-size:12px}
+  .bannerline__text{order:3;font-size:13px}
+  .bannerline__fruits{top:50%;transform:translateY(-50%);width:240px;height:auto}
+}
+
+@media (max-width:760px){
+  .only-mob{display:inline}
+  .hide-mob{display:none}
+  .quiz-fab{display:none}
+  /* нижняя панель «Квиз / Записаться» из макета */
+  .mobbar{display:flex;position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;width:335px;max-width:calc(100% - 24px);height:78px;padding:0 20px;gap:16px;align-items:center;border-radius:900px;border:1px solid #c9c9c9;background:linear-gradient(to bottom,rgba(242,248,243,.33),#f2f8f3);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  body.is-locked .mobbar{display:none}
+  .mobbar button{height:49px;border-radius:100px;display:flex;align-items:center;justify-content:center;gap:10px;font:500 16px/1 var(--sans);letter-spacing:.02em}
+  .mobbar__quiz{flex:0 0 115px;background:rgba(197,243,178,.56);border:1px solid #9bbc87;color:var(--main)}
+  .mobbar__zapis{flex:1;background:var(--grad);color:#fff;position:relative;overflow:hidden}
+  .mobbar__zapis::before{content:"";position:absolute;left:50%;top:calc(50% - 30px);width:180px;height:180px;transform:translate(-50%,-50%);background:url(../img/310b1.svg) center/contain no-repeat}
+  .mobbar__zapis span,.mobbar__zapis img{position:relative}
+  footer.footer{padding-bottom:110px}
+  /* слайдер: фото сверху, потом текст; на 1-м слайде две выгоды, без «Уже прошли тест» */
+  .slide1__bg{order:-1;height:200px}
+  .slide1__bg img{object-position:50% 15%}
+  .slide2__bg,.slide3__bg{order:-1;height:220px}
+  .slide1__content .feats li:nth-child(2),.slide1__bottom{display:none}
+  .slide1__btn{width:auto!important;align-self:flex-start;min-height:48px;padding:10px 20px;font-size:18px}
+  /* блок «Здоровый кишечник» на телефоне в макете отсутствует */
+  .main-sec{display:none}
+  /* преимущества: сетка 2×2, иконка над подписью */
+  .adv__inner{display:grid;grid-template-columns:1fr 1fr;gap:20px 10px;padding-top:24px;padding-bottom:24px}
+  .adv__item{width:auto;flex-direction:column;text-align:center;gap:10px;font-size:13px}
+  .adv__item br{display:inline}
+  /* итог «Изменений»: иконка слева, текст справа; цитата по центру ниже */
+  .changes__note{flex-direction:row;align-items:center;flex-wrap:wrap}
+  .changes__note p{flex:1;min-width:0;font-size:13px}
+  .changes__quote{position:static;transform:rotate(-7.95deg);margin:28px auto 0;width:240px}
+  /* «Второй урок»: поля → «данные в безопасности» → кнопка → согласие → «Бонусы уже ждут вас!» → бонусы */
+  .lead-form{display:flex;flex-direction:column}
+  .lead-form .contacts{order:1}
+  .lead-form .form-msg{order:2}
+  .lead-form .safe{order:3;margin-bottom:16px}
+  .lead-form .form-send{order:4}
+  .lesson2__leafs{display:block;left:-6px;top:-24px;width:56px;height:196px}
+  .lesson2__right{padding-top:0;gap:16px}
+  .lesson2__quote{display:block;position:relative;right:auto;top:auto;margin:10px auto 70px;width:160px}
+  .lesson2__quote img{left:68px;top:60px}
+  /* баннер: крупные фрукты сверху, кнопка, подпись, гарантия между линиями, текст внизу */
+  .bannerline__fruits{position:relative;top:auto;transform:none;width:290px;height:auto;display:block}
+  .bannerline__leafs{display:block;width:80px;height:128px;top:60px;bottom:auto}
+  .bannerline__inner{padding:6px var(--pad) 24px;gap:12px}
+  .bannerline__cta{flex-direction:column;align-items:flex-start;gap:12px}
+  .bannerline__safe{width:100%;padding:12px 0;border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2)}
+  /* футер по центру, меню столбиком */
+  .footer__top{align-items:center;text-align:center;gap:22px}
+  .footer .logo{width:auto}
+  .footer .menu{flex-direction:column;align-items:center;gap:20px}
+  .socials{justify-content:center;width:auto}
+  .footer__contacts{text-align:center;align-items:center}
+  .footer__bottom{align-items:center;text-align:center}
+  .footer__bottom a{text-decoration:underline}
+}
+/* цитата «Маленькие шаги…» вынесена из плашки: на десктопе позиция та же, что внутри плашки */
+@media (min-width:1101px){.changes__quote{left:1080px;top:auto;bottom:-62px}}
+@media (max-width:760px){
+  .lesson2__box{padding:20px 20px 30px}
+  .lesson2__left .label,.lesson2__left>.h2{margin-left:30px}
+  .lesson2__leafs{left:-10px;top:-18px;width:58px;height:200px}
+  .bannerline__safe{font-size:10px}
+  .bannerline__safe br,.reviews__head .h2 br{display:none}
+}
+@media (max-width:1100px) and (min-width:761px){
+  .lesson2__box{padding-left:90px}
+  .lesson2__leafs{left:-4px;top:30px;width:90px;height:310px}
+  .changes__quote{width:270px;bottom:330px;right:90px}
+  .program__right{position:static}
+  .program__inner{position:relative}
+  .program__leafs{display:block;right:-20px;top:-10px;width:110px;height:200px}
+  .program__leafs-blur{display:none}
+  .ticks br,.bannerline__safe br{display:none}
+  .bannerline__safe{font-size:10px}
+  .footer__top{display:grid;grid-template-columns:auto 1fr;gap:14px 20px;align-items:center}
+  .footer .menu{justify-self:end;gap:24px}
+  .socials{justify-content:flex-start;width:auto}
+  .footer__contacts{justify-self:end}
+}
+.changes__quote{width:auto}
+.changes__quote p{white-space:nowrap}
+.changes__quote img{margin-left:166px}
+@media (min-width:1101px){.changes__quote{left:1122px;bottom:-60px}}
+@media (max-width:760px){
+  .slide1__btn{width:258px!important;height:48px;min-height:48px;justify-content:center;font-size:20px;padding:0 20px}
+  .changes__quote{width:max-content}
+}
+@media (min-width:1101px) and (max-width:1300px){.changes__quote{position:absolute;left:auto;right:70px;bottom:-60px;margin:0}}
