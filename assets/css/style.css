@@ -1016,4 +1016,4 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 @media (min-width:1101px) and (max-width:1340px){.bannerline__leafs,.bannerline__leafs-blur{display:none}}
 
 /* телефон: крупнее зона нажатия без изменения вида — точки слайдера, меню в подвале, «Все отзывы» */
-@media (max-width:760px){.hero__dots{padding:6px 0 16px}.hero__dots button{height:36px;border:14px solid transparent;border-left:0;border-right:0;background-clip:padding-box;box-sizing:border-box}.hero__dots button::after{border-radius:900px}.footer .menu a,.reviews__all{padding:10px 0;margin:-10px 0}}
+@media (max-width:1100px){.hero__dots{padding:6px 0 16px}.hero__dots button{height:36px;border:14px solid transparent;border-left:0;border-right:0;background-clip:padding-box;box-sizing:border-box}.hero__dots button::after{border-radius:900px}.footer .menu a,.reviews__all{padding:10px 0;margin:-10px 0}}
