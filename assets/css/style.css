@@ -865,3 +865,13 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .main-sec__leafs-blur{display:none}
   .changes__quote{position:absolute;left:auto;right:70px;bottom:-60px;margin:0}
 }
+
+/* 1101–1300: слайд 1 — ветки меньше и текст левее, чтобы ветки не ложились на заголовок; «Изменения» — нижний ряд по центру */
+@media (min-width:1101px) and (max-width:1300px){
+  .slide1__content{right:clamp(40px,calc(100vw - 1180px),100px)}
+  .slide1__content .p{max-width:520px}
+  .slide1__leafs{width:clamp(115px,calc(100vw - 1130px),150px);height:170px}
+  .changes__grid{grid-template-columns:repeat(6,1fr)}
+  .changes__grid>*{grid-column:span 2}
+  .changes__grid>:nth-child(4){grid-column:2/span 2}
+}
