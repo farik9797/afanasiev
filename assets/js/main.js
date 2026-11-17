@@ -20,11 +20,18 @@
       void dots[cur].offsetWidth; // перезапуск анимации, если точка та же
       dots[cur].classList.add('is-active');
       slides.forEach(function (s, k) { s.setAttribute('aria-hidden', k === cur ? 'false' : 'true'); });
+      fitHeight();
       // как в прототипе: на первом слайде бледная «назад», на последнем — «вперёд»
       prev.classList.toggle('is-off', cur === 0);
       next.classList.toggle('is-off', cur === slides.length - 1);
     };
     var prev = $('.hero__arrow--prev', hero), next = $('.hero__arrow--next', hero);
+    // на планшете и телефоне слайды разной высоты: высота ленты = высота текущего слайда
+    function fitHeight() {
+      track.style.height = window.innerWidth <= 1100 ? slides[cur].scrollHeight + 'px' : '';
+    }
+    window.addEventListener('resize', fitHeight);
+    window.addEventListener('load', fitHeight);
     var auto = function () { hero.classList.remove('is-paused'); };
     var pause = function () { hero.classList.add('is-paused'); };
     $('.hero__dots', hero).addEventListener('animationend', function () { go(cur + 1); });

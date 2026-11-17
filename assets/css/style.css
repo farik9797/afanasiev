@@ -688,3 +688,13 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .main-sec__text .p br,.ticks br,.change p br,.changes__lead br{display:none}
   .main-sec__text .p{min-height:0}
 }
+/* слайдер на планшете и телефоне: каждый слайд своей высоты, лента плавно подстраивается */
+@media (max-width:1100px){
+  .hero__track{align-items:flex-start;transition:transform .9s cubic-bezier(.65,0,.35,1),height .5s ease}
+  .slide{min-height:0}
+}
+@media (max-width:760px){
+  .art3>.art3__quote,.art3>.art3__sign,.art3>.art3__heart{display:none}
+}
+@media (max-width:1100px){.slide__content .p{width:auto}}
+@media (max-width:1100px){.slide__content>.btn{white-space:normal;height:auto;min-height:55px;padding-top:10px;padding-bottom:10px;text-align:left;max-width:100%}}
