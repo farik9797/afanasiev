@@ -844,3 +844,15 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .slide1__bg img{left:auto;right:calc(100% - var(--gut) - 1188px);width:min(calc(var(--gut) + 1188px),1349px);object-position:100% 0;
     -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 140px);mask-image:linear-gradient(90deg,transparent 0,#000 140px)}
 }
+
+/* слайд 3: картинка art3 выступает на 1px влево — обрезаем по рамке */
+.slide3__bg{overflow:hidden}
+
+/* 1101–1511: фото слайдов 2 и 3 не заходят под текст — кадр справа от текста, как на планшете */
+@media (min-width:1101px) and (max-width:1511px){
+  .slide2__bg,.slide3__bg{right:0;width:calc(100% - 700px)}
+  .slide2__bg img{object-position:50% center}
+  .play--big{left:calc(50% - 40px)}
+  .art3{left:0;right:auto;transform-origin:top left;transform:translateX(var(--tx,0)) scale(var(--s,1))}
+}
+@media (min-width:1101px) and (max-width:1511px){.art3>.art3__quote,.art3>.art3__sign,.art3>.art3__heart{display:none}}

@@ -55,11 +55,11 @@
   var art = $('.art3');
   if (art) {
     var fitArt = function () {
-      if (window.innerWidth > 1100) { art.style.removeProperty('--s'); art.style.removeProperty('--tx'); return; }
+      if (window.innerWidth > 1511) { art.style.removeProperty('--s'); art.style.removeProperty('--tx'); return; }
       var box = art.parentNode, w = box.clientWidth;
       var s = Math.max(box.clientHeight / 516, w / 958);
-      // в кадре держим точку между Евгением и книгой (x≈470 на макете 958×516)
-      var tx = Math.min(0, Math.max(w - 958 * s, w / 2 - 470 * s));
+      var fx = 360; // в кадре — Евгений и край книги
+      var tx = Math.min(0, Math.max(w - 958 * s, w / 2 - fx * s));
       art.style.setProperty('--s', s.toFixed(4));
       art.style.setProperty('--tx', tx.toFixed(1) + 'px');
     };
