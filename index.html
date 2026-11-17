@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:wght@600&family=Onest:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=58">
+<link rel="stylesheet" href="assets/css/style.css?v=59">
 </head>
 <body>
 <a class="skip" href="#content">Перейти к содержимому</a>
@@ -22,11 +22,16 @@
       <span class="logo__text"><b>Евгений Афанасьев</b><span>Интегративный нутрициолог</span></span>
     </a>
     <nav class="menu" id="site-menu" aria-label="Меню">
+      <p class="menu__title" aria-hidden="true">Меню:</p>
       <a href="#about">О курсе</a>
       <a href="#program">Программа</a>
       <a href="#reviews">Отзывы</a>
       <a href="#" data-open="quiz">Квиз</a>
       <a href="#contacts">Контакты</a>
+      <div class="menu__btns">
+        <button class="btn menu__test" type="button" data-open="quiz">Пройти тест <img src="assets/img/2c5e3.svg" alt="" aria-hidden="true" width="24" height="24"></button>
+        <button class="q-btn q-btn--close menu__close" type="button"><img src="assets/img/c964a.svg" alt="" aria-hidden="true" width="24" height="24">Закрыть</button>
+      </div>
     </nav>
     <button class="btn btn--header" data-open="zapis">Записаться на курс <img src="assets/img/2c5e3.svg" alt="" aria-hidden="true" width="24" height="24"></button>
     <button class="burger" aria-label="Открыть меню" aria-controls="site-menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -394,6 +399,6 @@
   </div>
 </div>
 
-<script src="assets/js/main.js?v=16"></script>
+<script src="assets/js/main.js?v=17"></script>
 </body>
 </html>

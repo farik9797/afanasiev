@@ -78,12 +78,18 @@
   var header = $('.header');
   var burger = $('.burger');
   if (burger) {
+    var closeMenu = function () { header.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); };
     burger.addEventListener('click', function () {
       var open = header.classList.toggle('is-open');
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-    $$('.header .menu a').forEach(function (a) {
-      a.addEventListener('click', function () { header.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); });
+    $$('.header .menu a, .header .menu button').forEach(function (a) { a.addEventListener('click', closeMenu); });
+    // клик мимо карточки меню или Escape — закрыть
+    document.addEventListener('click', function (e) {
+      if (header.classList.contains('is-open') && !e.target.closest('.header .menu, .burger')) closeMenu();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && header.classList.contains('is-open')) { closeMenu(); burger.focus(); }
     });
   }
 
