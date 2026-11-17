@@ -947,3 +947,6 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .score-box{width:100%;justify-content:center}
   .footer .socials{width:100%;justify-content:center;border-top:1px solid #c9d8d4;padding-top:22px}
 }
+
+/* десктоп: строка модуля 78px как в макете (было 80) */
+@media (min-width:1101px){.modules li{padding:19px 0}.modules li:first-child{padding-top:0}.modules li:last-child{padding-bottom:0}}
