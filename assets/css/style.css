@@ -14,7 +14,8 @@
   --pad:40px;
 }
 /* в Libertinus Serif из Google Fonts нет «ё/Ё» — берём букву из системной засечки */
-@font-face{font-family:'Libertinus Serif';font-weight:600;font-style:normal;src:local('Georgia Bold'),local('Georgia-Bold'),local('Times New Roman Bold'),local('TimesNewRomanPS-BoldMT'),local('Noto Serif Bold'),local('NotoSerif-Bold');unicode-range:U+0401,U+0451}
+/* «Ё/ё» нет в Libertinus Serif из Google Fonts — берём из оригинального Libertinus (OFL), подмножество 3 КБ */
+@font-face{font-family:'Libertinus Serif';font-weight:600;font-style:normal;font-display:swap;src:url(../fonts/libertinus-yo.woff2) format('woff2');unicode-range:U+0401,U+0451}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{margin:0;-webkit-tap-highlight-color:rgba(106,170,63,.15);touch-action:manipulation;background:var(--bg);color:var(--main);font:500 16px/1.208 var(--sans);letter-spacing:.02em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
