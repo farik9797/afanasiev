@@ -1064,3 +1064,59 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 /* линия между модулями не занимает места — как в Figma (карточка 760px) */
 .program--v2 .modules li{border-top:0}.program--v2 .modules li+li{box-shadow:inset 0 1px 0 #d6e2df}
 @media (min-width:1101px){.program--v2{padding-bottom:75px}}
+/* планшет: блок с видео и «Изменения» — по макету 834 */
+@media (min-width:761px) and (max-width:1100px){
+  .main-sec .container{padding-bottom:61px}
+  .video-frame{aspect-ratio:465/327}
+  .main-sec__leafs{width:175px;height:335px;right:-12px;bottom:22px}
+  .changes__head{gap:40px}
+}
+@media (min-width:761px) and (max-width:1100px){.main-sec__quote{right:82px;bottom:238px;width:262px}.main-sec__quote p{font-size:22.5px}}
+@media (min-width:761px) and (max-width:810px){.main-sec__quote{right:50px;bottom:230px;width:216px}.main-sec__quote p{font-size:18.5px}}
+/* планшет: бонусы на всю ширину плашки, подпись «Бонусы уже ждут вас!» над третьей карточкой; отступы в отзывах — по макету 834 */
+@media (min-width:761px) and (max-width:1100px){
+  .lesson2__box{padding-top:20px;padding-right:20px;padding-bottom:40px}
+  .lesson2__left .contact{flex:1;width:auto;min-width:0}
+  .lesson2__right{padding-top:18px;margin:0 0 0 -70px;width:calc(100% + 70px)}
+  .lesson2__quote{top:-65px;right:-14px}
+  .lesson2__quote img{top:62px}
+  .reviews__head{gap:39px;margin-bottom:57px}
+}
+@media (min-width:761px) and (max-width:810px){.lesson2__quote{top:-88px;right:-30px}}
+/* телефон: преимущества и «Изменения» — по макету 393 */
+@media (max-width:760px){
+  .adv__inner{row-gap:10px;padding-top:22px;padding-bottom:17px}
+  .changes{padding-top:21px}
+  .changes__head{gap:40px}
+}
+/* телефон: форма второго урока и бонусы — по макету 393 */
+@media (max-width:760px){
+  .lesson2__box{padding-bottom:40px}
+  .lesson2 .contacts{gap:20px}
+  .lesson2 .btn--submit{height:auto;min-height:78px}
+  .lesson2 .form-send{margin-bottom:0}
+  .lesson2__quote{margin-top:5px;margin-bottom:25px}
+}
+/* телефон: фото «Для кого», отзывы, подвал — по макету 393 */
+@media (max-width:760px){
+  .for__quote{left:13px;top:20px}
+  .for__sprout{left:22px;top:126px}
+  .reviews{padding-bottom:20px}
+  .reviews__head{gap:40px}
+  .reviews__grid{gap:20px}
+  .footer{padding-top:27px}
+  .footer .menu{margin-top:12px}
+  .footer .socials{margin-top:5px;padding-top:26px}
+  .footer__contacts{margin-top:3px}
+  .footer__top{padding-bottom:25px}
+  .footer__bottom{padding-top:30px}
+}
+/* телефон: баннер — фрукты крупнее, ветка внизу справа; подпись над бонусами выше */
+@media (max-width:760px){
+  .lesson2__quote{margin-top:-10px}
+  .bannerline__fruits{width:354px;max-width:none;margin:-6px 0 5px -10px}
+  .for{padding-top:25px}
+  .bannerline__inner{padding-bottom:14px}
+  .bannerline__leafs{width:95px;height:152px;top:auto;bottom:70px;right:-8px}
+  .reviews__head{margin-bottom:40px}
+}
