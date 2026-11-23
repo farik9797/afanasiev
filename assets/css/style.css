@@ -1049,10 +1049,13 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 @media (max-width:760px){
   .program--v2 .program__head{margin-bottom:30px}
   .program--v2 .modules{padding:20px 16px}
-  .program--v2 .modules li{flex-wrap:wrap;align-items:flex-start;row-gap:10px;padding:14px 0}
+  .program--v2 .modules li{flex-wrap:wrap;align-items:flex-start;row-gap:12px;padding:20px 0}
+  .program--v2 .modules li>div{gap:10px}
   .program--v2 .modules li>div{flex:1 1 calc(100% - 50px)}
   .program--v2 .modules em{width:auto;flex-basis:100%;text-align:left;padding-left:50px;margin:0}
   .program--v2 .youget{padding:20px 16px;gap:24px}
-  .program--v2 .youget .h2 br{display:inline}
+  .program--v2 .youget .h2 br{display:none}
   .youget__list--num li{gap:14px;padding:0}
 }
+.youget__list .yg-num{font-size:24px;color:var(--main)}
+@media (max-width:760px){.program--v2 .youget .h2{font-size:31px;text-wrap:wrap}}
