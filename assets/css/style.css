@@ -1061,3 +1061,6 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 @media (max-width:760px){.program--v2 .youget .h2{font-size:31px;text-wrap:wrap}}
 /* планшет 761–1100: отступы «Программы» по макету Tablet2 */
 @media (min-width:761px) and (max-width:1100px){.program--v2{padding-top:16px}.program--v2 .program__head{margin-bottom:46px}.program--v2 .youget{gap:40px}.youget__list--num{gap:21px}}
+/* линия между модулями не занимает места — как в Figma (карточка 760px) */
+.program--v2 .modules li{border-top:0}.program--v2 .modules li+li{box-shadow:inset 0 1px 0 #d6e2df}
+@media (min-width:1101px){.program--v2{padding-bottom:75px}}
