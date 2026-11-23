@@ -1018,3 +1018,41 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 
 /* телефон: крупнее зона нажатия без изменения вида — точки слайдера, меню в подвале, «Все отзывы» */
 @media (max-width:1100px){.hero__dots{padding:6px 0 16px}.hero__dots button{height:36px;border:14px solid transparent;border-left:0;border-right:0;background-clip:padding-box;box-sizing:border-box}.hero__dots button::after{border-radius:900px}.footer .menu a,.reviews__all{padding:10px 0;margin:-10px 0}}
+
+/* ===== Программа v2 (макет 23.11): 10 модулей + «Что вы получите» с номерами ===== */
+.program--v2{padding-bottom:40px}
+.program--v2 .program__head{display:flex;flex-direction:column;align-items:flex-start;margin-bottom:40px}
+.program--v2 .program__head .h2{margin:10px 0 20px}
+.program--v2 .program__lead{max-width:545px;margin:0}
+.program__cols{display:flex;gap:20px;align-items:stretch}
+.program--v2 .modules{flex:1;min-width:0;padding:20px;gap:0}
+.program--v2 .modules li{align-items:center;padding:20px 0;border-top:1px solid #d6e2df;gap:20px}
+.program--v2 .modules li:first-child{border-top:0;padding-top:0}
+.program--v2 .modules li:last-child{padding-bottom:0}
+.program--v2 .modules .num{width:30px;height:30px;font-size:16px}
+.program--v2 .modules em{width:96px;text-align:right}
+.program--v2 .youget{width:566px;flex-shrink:0;padding:20px;gap:40px;justify-content:flex-start}
+.youget__head{display:flex;flex-direction:column;align-items:flex-start}
+.youget__list--num{flex:1;justify-content:space-between;gap:14px}
+.youget__list--num li{padding:0 6px;gap:20px}
+.yg-num{position:relative;flex-shrink:0;width:54.5px;height:54.5px;margin:6px 0;border-radius:10px;background:#fff;box-shadow:var(--shadow);overflow:hidden;display:flex;align-items:center;justify-content:center;font:600 24px/1.208 var(--sans);letter-spacing:.1em;color:var(--main);text-indent:.1em}
+.yg-num::before{content:"";position:absolute;width:67.3px;height:67.3px;left:50%;top:-33.9px;transform:translateX(-50%);border-radius:50%;background:#e8fbf2}
+.yg-num{isolation:isolate}.yg-num::before{z-index:-1}
+.youget__final{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:10px;border-radius:10px;background:#2d5f57;border:1px solid rgba(234,255,221,.78)}
+.youget__final b{font:500 16px/1.208 var(--sans);letter-spacing:.02em;color:#fff}
+.youget__final span:last-child{font:500 14px/1.208 var(--sans);letter-spacing:.01em;color:#fdf6e7}
+@media (max-width:1100px){
+  .program__cols{flex-direction:column}
+  .program--v2 .youget{width:100%;gap:30px}
+  .program--v2 .youget .h2 br{display:none}
+}
+@media (max-width:760px){
+  .program--v2 .program__head{margin-bottom:30px}
+  .program--v2 .modules{padding:20px 16px}
+  .program--v2 .modules li{flex-wrap:wrap;align-items:flex-start;row-gap:10px;padding:14px 0}
+  .program--v2 .modules li>div{flex:1 1 calc(100% - 50px)}
+  .program--v2 .modules em{width:auto;flex-basis:100%;text-align:left;padding-left:50px;margin:0}
+  .program--v2 .youget{padding:20px 16px;gap:24px}
+  .program--v2 .youget .h2 br{display:inline}
+  .youget__list--num li{gap:14px;padding:0}
+}

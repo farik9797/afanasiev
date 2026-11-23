@@ -51,10 +51,10 @@
   fade($$('.changes__quote'), 0.3);
 
   /* программа */
-  rise($$('.program__left > .label, .program__left > .h2, .program__lead'), { stagger: 0.08 });
-  rise($$('.modules li'), { stagger: 0.08, trigger: q('.modules') });
-  rise([q('.youget .h2')]);
-  rise($$('.youget__list li'), { stagger: 0.07, trigger: q('.youget__list') });
+  rise($$('.program__head > *'), { stagger: 0.08 });
+  rise($$('.modules li'), { stagger: 0.06, trigger: q('.modules') });
+  rise([q('.youget__head')]);
+  rise($$('.youget__list li').concat([q('.youget__final')]), { stagger: 0.07, trigger: q('.youget__list') });
 
   /* второй урок */
   rise($$('.lesson2__left > *'), { stagger: 0.08, trigger: q('.lesson2__box') });
@@ -73,7 +73,7 @@
   rise($$('.review'), { stagger: 0.1, trigger: q('.reviews__grid') });
 
   /* ветки слегка «плывут» при прокрутке (только декор) */
-  $$('.main-sec__leafs, .program__leafs, .lesson2__leafs, .bannerline__leafs').forEach(function (el) {
+  $$('.main-sec__leafs, .lesson2__leafs, .bannerline__leafs').forEach(function (el) {
     gsap.fromTo(el, { y: 24 }, { y: -24, ease: 'none',
       scrollTrigger: { trigger: el.parentNode, start: 'top bottom', end: 'bottom top', scrub: 0.6 } });
   });
