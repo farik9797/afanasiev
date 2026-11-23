@@ -1059,3 +1059,5 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 }
 .youget__list .yg-num{font-size:24px;color:var(--main)}
 @media (max-width:760px){.program--v2 .youget .h2{font-size:31px;text-wrap:wrap}}
+/* планшет 761–1100: отступы «Программы» по макету Tablet2 */
+@media (min-width:761px) and (max-width:1100px){.program--v2{padding-top:16px}.program--v2 .program__head{margin-bottom:46px}.program--v2 .youget{gap:40px}.youget__list--num{gap:21px}}
