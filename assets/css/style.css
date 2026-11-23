@@ -1120,3 +1120,18 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .bannerline__leafs{width:95px;height:152px;top:auto;bottom:70px;right:-8px}
   .reviews__head{margin-bottom:40px}
 }
+/* телефон: шапка 83 px как в макете, бургер 33×3, крупнее подпись; первый слайд — отступ под меткой, кнопка 48 */
+@media (max-width:760px){
+  html{scroll-padding-top:85px}
+  .header__inner{height:83px}
+  .logo__text b{font-size:16px}.logo__text span{font-size:14px}
+  .burger{width:46px;padding:10px 13px 10px 0;gap:4px}
+  .burger span{height:3px}
+  .header.is-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .header.is-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .header.is-open .menu{top:99px;max-height:calc(100dvh - 115px)}
+  .slide1__content .h-hero{margin-top:10px}
+  .slide__content>.slide1__btn{height:48px;min-height:48px;padding:0 20px;margin-top:20px}
+}
+@media (max-width:760px){.slide1__content .feats{gap:12px}}
+@media (max-width:760px){.hero__dots{padding-bottom:8px}}
