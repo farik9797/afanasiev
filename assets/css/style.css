@@ -1145,3 +1145,9 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 @media (min-width:1101px) and (max-width:1511px){
   .slide3__bg{width:calc(100% - 626px)}
 }
+/* планшет, слайд 2: фото эксперта по макету 834 (масштаб 0.678, рамка 434 px справа) */
+@media (min-width:761px) and (max-width:1100px){
+  .slide2__bg{left:auto;right:0;width:434px;height:577px;overflow:hidden}
+  .slide2__bg>img{position:absolute;left:-162px;top:1px;width:1188px;height:575px;max-width:none;object-fit:fill}
+  .slide2__bg::before{background:linear-gradient(90deg,#fbfaf6 0,rgba(251,250,246,0) 30%)}
+}
