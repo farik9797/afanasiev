@@ -61,6 +61,7 @@
       var s = Math.max(box.clientHeight / 516, w / 958);
       var fx = (window.innerWidth > 760 && window.innerWidth <= 1100) ? 330 : 360; // в кадре — Евгений и край книги
       var tx = Math.min(0, Math.max(w - 958 * s, w / 2 - fx * s));
+      if (window.innerWidth > 1100) tx = Math.max(tx, -40); // на десктопе плечо эксперта не уходит за левый край кадра
       art.style.setProperty('--s', s.toFixed(4));
       art.style.setProperty('--tx', tx.toFixed(1) + 'px');
     };

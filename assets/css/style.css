@@ -1141,3 +1141,7 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .slide2__bg>img{object-position:min(0px, calc(50vw - 698px)) center}
   .slide--2 .play--big{left:calc(min(0px, 50vw - 698px) + 327px)}
 }
+/* 1101–1511: фото слайда 3 — рамка как на 1512 (от 626 px), чтобы плечо эксперта не срезалось краем */
+@media (min-width:1101px) and (max-width:1511px){
+  .slide3__bg{width:calc(100% - 626px)}
+}
