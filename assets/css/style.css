@@ -1151,3 +1151,29 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
   .slide2__bg>img{position:absolute;left:-162px;top:1px;width:1188px;height:575px;max-width:none;object-fit:fill}
   .slide2__bg::before{background:linear-gradient(90deg,#fbfaf6 0,rgba(251,250,246,0) 30%)}
 }
+/* планшет, слайд 3: как в макете Tablet2 — эксперт справа, книги перед ним (вторым слоем той же картинки) */
+.art3--books{display:none}
+@media (min-width:761px) and (max-width:1100px){
+  .slide3__bg{left:auto;right:0;width:434px;height:577px;overflow:hidden}
+  .slide3__bg .art3{transform-origin:top left;transform:translate(-24.95px,-26.87px) scale(1.1683)}
+  .slide3__bg .art3--books{display:block;transform:translate(-221.24px,149.81px) scale(.839);clip-path:polygon(404px 141px,651px 146px,649px 185px,793px 206px,800px 250px,845px 262px,845px 490px,404px 490px)}
+  .slide3__bg::after{background:linear-gradient(90deg,#fbfaf5 0,rgba(251,250,245,0) 20%)}
+}
+/* планшет: текст слайдов по макету 834 — кнопки 48, слайд 1 шире и крупнее, у слайда 2 подзаголовок шире */
+@media (min-width:761px) and (max-width:1100px){
+  .slide__content>.btn{height:48px;min-height:48px;padding-top:0;padding-bottom:0}
+  .slide--1{grid-template-columns:44.6% 1fr;column-gap:0}
+  .slide1__content>*{margin-right:12px}
+  .slide1__content .h-hero{font-size:45.6px;line-height:45.144px}
+  .slide1__content>.btn{margin-top:31px}
+  .slide--2 .slide__content .p{max-width:400px;width:400px}
+}
+@media (min-width:761px) and (max-width:1100px){
+  .slide1__content .p{margin-right:12px;width:auto;max-width:none}
+  .slide1__bottom{margin-top:36px}
+  .slide1__bottom .quote--small{position:relative;left:-50px;top:20px}
+  .slide--2 .slide__content .feats{margin-top:34px}
+  .slide--3 .slide__content{padding-top:58px}
+  .slide--3 .slide__content>.btn{height:54px;min-height:54px}
+  .slide--3 .slide__content .feats{margin-top:32px}
+}

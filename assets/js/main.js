@@ -55,6 +55,12 @@
   /* ---------- слайд 3: на узких экранах картинка с надписями масштабируется целиком ---------- */
   var art = $('.art3');
   if (art) {
+    // планшет: книги отдельным слоем перед экспертом (как в макете Tablet2) — копия картинки, обрезанная по книгам
+    var books = art.cloneNode(true);
+    books.classList.add('art3--books');
+    books.setAttribute('aria-hidden', 'true');
+    Array.prototype.forEach.call(books.querySelectorAll('img'), function (i) { i.alt = ''; });
+    art.parentNode.appendChild(books);
     var fitArt = function () {
       if (window.innerWidth > 1511) { art.style.removeProperty('--s'); art.style.removeProperty('--tx'); return; }
       var box = art.parentNode, w = box.clientWidth;
