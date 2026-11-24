@@ -1135,3 +1135,9 @@ body.is-locked .quiz-fab{opacity:0;pointer-events:none}
 }
 @media (max-width:760px){.slide1__content .feats{gap:12px}}
 @media (max-width:760px){.hero__dots{padding-bottom:8px}}
+/* 1101–1511: фото слайда 2 — рамка как на 1512 (от 597 px), кадр смещается так, чтобы эксперт был целиком и по центру; кнопка видео едет вместе с кадром */
+@media (min-width:1101px) and (max-width:1511px){
+  .slide2__bg{width:calc(100% - 597px)}
+  .slide2__bg>img{object-position:min(0px, calc(50vw - 698px)) center}
+  .slide--2 .play--big{left:calc(min(0px, 50vw - 698px) + 327px)}
+}
